@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Избранное</title>
+    <title>Мой профиль</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -712,7 +712,7 @@
       </header>
 
       <main class="page">
-        <section class="favorites">
+        <section class="cabinet">
           <div class="page-head">
             <div class="container">
               <div class="page-head__body page-head__body_border">
@@ -722,554 +722,139 @@
                   </li>
                    
                   <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Избранное</span>
+                    <span class="breadcrumbs__link">Мой профиль</span>
                   </li>
                 </ul>
-                <div class="cursive-title cursive-title_right cursive-title_shadow" aria-hidden="true">
-                  <span>Любимое</span>
-                </div>
                 <div class="page-head__main">
-                  <h1 class="page-head__title _h2">Избранное</h1>
+                  <h1 class="page-head__title _h3">Мой профиль</h1>
                 </div>
               </div>
             </div>
           </div>
           <div class="container">
-            <div class="favorites__body">
-              <div class="favorites-empty">
-                <p class="favorites-empty__text">Список избранных элементов пуст</p>
-                <p class="favorites-empty__slogan">начни свои покупки</p>
-                <a class="favorites-empty__btn btn btn_normal btn_main" href="./categories.html"
-                  >В каталог</a
-                >
-              </div>
-              <div class="favorites__items">
-                <article class="product-card">
-                  <a class="product-card__link" href="./product.html">
-                    <span class="_seo">Authentic grenadine/Гренадин -Старинный рецепт</span>
-                  </a>
-                  <figure class="product-card__img-box">
-                    <picture><source srcset="./img/content/pic/product-10.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-10.png" alt="image"></picture>
-                  </figure>
-                  <div class="product-card__content">
-                    <h3 class="product-card__title">Authentic grenadine/Гренадин -Старинный рецепт</h3>
-                    <div class="product-card__type">Ареометры и термометры</div>
-                  </div>
-                  <div class="product-card__footer">
-                    <div class="product-card__info">
-                      <div class="product-card__cost">
-                        <span class="product-card__price">1 000 000 ₽</span>
-                        <span class="product-card__sale _sale">1 999 000 ₽</span>
+            <div class="cabinet__body">
+              <div class="cabinet__main">
+                <div class="cabinet-extra" data-delay="5000">
+                  <div class="cabinet-extra__items">
+                    <article class="cabinet-extra__item">
+                      <a class="cabinet-extra__link" href="#1">
+                        <span class="_seo">Открыть предложение</span>
+                      </a>
+                      <figure class="cabinet-extra__media">
+                        <picture><source srcset="./img/content/pic/extra-1.webp" type="image/webp"><img class="cabinet-extra__img" src="./img/content/pic/extra-1.jpg" alt="Изображение"></picture>
+                      </figure>
+                      <div class="cabinet-extra__content">
+                        <h2 class="cabinet-extra__title _h1">Летние скидки</h2>
+                        <p class="cabinet-extra__text">Скидки до 20%</p>
                       </div>
-                      <ul class="product-card__tags">
-                        <li class="product-card__tag product-card__tag_event">Акция</li>
-                        <li class="product-card__tag product-card__tag_event">-50%</li>
-                      </ul>
-                    </div>
-                    <div class="product-card__action">
-                      <button
-                        class="product-card__favourites icon-fav _is-active"
-                        type="button"
-                        title="Добавить в избранное"
-                        data-favourites
-                      >
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                      <div class="product-card__quantity">
-                        <div class="quantity quantity_small" data-quantity>
-                          <button
-                            class="quantity__btn icon-minus"
-                            type="button"
-                            data-quantity-button="minus"
-                          >
-                            <span class="_seo">Меньше</span>
-                          </button>
-                          <div class="quantity__main">
-                            <input class="quantity__input" type="text" value="1"
-                              data-quantity-value
-                              data-quantity-min="1"
-                              data-quantity-max="9999"
-                            >
-                          </div>
-                          <button
-                            class="quantity__btn icon-plus"
-                            type="button"
-                            data-quantity-button="plus"
-                          >
-                            <span class="_seo">Больше</span>
-                          </button>
+                    </article>
+                    <article class="cabinet-extra__item">
+                      <a class="cabinet-extra__link" href="#2">
+                        <span class="_seo">Открыть предложение</span>
+                      </a>
+                      <figure class="cabinet-extra__media">
+                        <picture><source srcset="./img/content/pic/extra-2.webp" type="image/webp"><img class="cabinet-extra__img" src="./img/content/pic/extra-2.jpg" alt="Изображение"></picture>
+                      </figure>
+                      <div class="cabinet-extra__content">
+                        <h2 class="cabinet-extra__title _h1">Финальные скидки</h2>
+                        <p class="cabinet-extra__text">Скидки до 50%</p>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cabinet-extra__actions">
+                    <button
+                      class="cabinet-extra__btn cabinet-extra__btn_prev btn btn_icon btn_main icon-arr-left"
+                      type="button"
+                    >
+                      <span class="_seo">Предыдущий слайд</span>
+                    </button>
+                    <button
+                      class="cabinet-extra__btn cabinet-extra__btn_next btn btn_icon btn_main icon-arr-right"
+                      type="button"
+                    >
+                      <span class="_seo">Следующий слайд</span>
+                    </button>
+                  </div>
+                  <button
+                    class="cabinet-extra__close btn btn_small-extra btn_icon icon-cross"
+                    type="button"
+                  >
+                    <span class="_seo">Закрыть</span>
+                  </button>
+                </div>
+                <div class="cabinet__content">
+                  <div class="cabinet__item cabinet__item_badge">
+                    <div class="user-badge">
+                      <div class="user-badge__head">
+                        <div class="user-badge__avatar _h3">
+                          <span>TA</span>
                         </div>
-                        <button
-                          class="product-card__buy icon-plus"
-                          data-buy
-                          type="button"
-                          title="Добавить в корзину"
-                        >
-                          <span class="_seo">Добавить в корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article class="product-card">
-                  <a class="product-card__link" href="./product.html">
-                    <span class="_seo">Authentic grenadine</span>
-                  </a>
-                  <figure class="product-card__img-box">
-                    <picture><source srcset="./img/content/pic/product-2.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-2.png" alt="image"></picture>
-                  </figure>
-                  <div class="product-card__content">
-                    <h3 class="product-card__title">Authentic grenadine</h3>
-                    <div class="product-card__type">Диспенсеры, лимонадники</div>
-                  </div>
-                  <div class="product-card__footer">
-                    <div class="product-card__info">
-                      <div class="product-card__cost">
-                        <span class="product-card__price">500 ₽</span>
-                      </div>
-                      <ul class="product-card__tags">
-                        <li class="product-card__tag product-card__tag_event">Акция</li>
-                      </ul>
-                    </div>
-                    <div class="product-card__action">
-                      <button
-                        class="product-card__favourites icon-fav _is-active"
-                        type="button"
-                        title="Добавить в избранное"
-                        data-favourites
-                      >
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                      <div class="product-card__quantity">
-                        <div class="quantity quantity_small" data-quantity>
-                          <button
-                            class="quantity__btn icon-minus"
-                            type="button"
-                            data-quantity-button="minus"
-                          >
-                            <span class="_seo">Меньше</span>
-                          </button>
-                          <div class="quantity__main">
-                            <input class="quantity__input" type="text" value="1"
-                              data-quantity-value
-                              data-quantity-min="1"
-                              data-quantity-max="9999"
-                            >
-                          </div>
-                          <button
-                            class="quantity__btn icon-plus"
-                            type="button"
-                            data-quantity-button="plus"
-                          >
-                            <span class="_seo">Больше</span>
-                          </button>
+                        <div class="user-badge__title">
+                          <div class="user-badge__desc">Личные данные</div>
+                          <div class="user-badge__name _h3">Теплякова Анастасия</div>
                         </div>
-                        <button
-                          class="product-card__buy icon-plus"
-                          data-buy
-                          type="button"
-                          title="Добавить в корзину"
-                        >
-                          <span class="_seo">Добавить в корзину</span>
-                        </button>
                       </div>
-                    </div>
-                  </div>
-                </article>
-                <article class="product-card">
-                  <a class="product-card__link" href="./product.html">
-                    <span class="_seo">Темпер JoeFrex D58 Galaxy желтый классический</span>
-                  </a>
-                  <figure class="product-card__img-box">
-                    <picture><source srcset="./img/content/pic/product-3.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-3.png" alt="image"></picture>
-                  </figure>
-                  <div class="product-card__content">
-                    <h3 class="product-card__title">Темпер JoeFrex D58 Galaxy желтый классический</h3>
-                    <div class="product-card__type">Инвентарь для льда</div>
-                  </div>
-                  <div class="product-card__footer">
-                    <div class="product-card__info">
-                      <div class="product-card__cost">
-                        <span class="product-card__price">10 000 ₽</span>
-                      </div>
-                      <ul class="product-card__tags">
-                        <li class="product-card__tag product-card__tag_event">Акция</li>
-                      </ul>
-                    </div>
-                    <div class="product-card__action">
-                      <button
-                        class="product-card__favourites icon-fav _is-active"
-                        type="button"
-                        title="Добавить в избранное"
-                        data-favourites
-                      >
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                      <div class="product-card__quantity">
-                        <div class="quantity quantity_small" data-quantity>
-                          <button
-                            class="quantity__btn icon-minus"
-                            type="button"
-                            data-quantity-button="minus"
+                      <div class="user-badge__footer">
+                        <ul class="user-badge__contacts">
+                          <li class="user-badge__contact user-badge__contact_large">8 000 999 22 00</li>
+                          <li class="user-badge__contact">email@yandex.ru</li>
+                        </ul>
+                        <div class="user-badge__action">
+                          <a class="user-badge__btn btn btn_small-extra btn_neutral" href="#">
+                            Изменить данные
+                          </a>
+                          <a
+                            class="user-badge__btn user-badge__btn_accent btn btn_small-extra btn_neutral"
+                            href="#"
                           >
-                            <span class="_seo">Меньше</span>
-                          </button>
-                          <div class="quantity__main">
-                            <input class="quantity__input" type="text" value="1"
-                              data-quantity-value
-                              data-quantity-min="1"
-                              data-quantity-max="9999"
-                            >
-                          </div>
-                          <button
-                            class="quantity__btn icon-plus"
-                            type="button"
-                            data-quantity-button="plus"
+                            Выход из профиля
+                          </a>
+                          <a
+                            class="user-badge__settings btn btn_small btn_neutral btn_icon icon-setting"
+                            href="#"
                           >
-                            <span class="_seo">Больше</span>
-                          </button>
+                            <span class="_seo">Настройки</span>
+                          </a>
                         </div>
-                        <button
-                          class="product-card__buy icon-plus"
-                          data-buy
-                          type="button"
-                          title="Добавить в корзину"
-                        >
-                          <span class="_seo">Добавить в корзину</span>
-                        </button>
                       </div>
                     </div>
                   </div>
-                </article>
-                <article class="product-card">
-                  <a class="product-card__link" href="./product.html">
-                    <span class="_seo">Authentic grenadine/Гренадин -Старинный рецепт</span>
-                  </a>
-                  <figure class="product-card__img-box">
-                    <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-4.png" alt="image"></picture>
-                  </figure>
-                  <div class="product-card__content">
-                    <h3 class="product-card__title">Authentic grenadine/Гренадин -Старинный рецепт</h3>
-                    <div class="product-card__type">Мадлеры и ступки</div>
-                  </div>
-                  <div class="product-card__footer">
-                    <div class="product-card__info">
-                      <div class="product-card__cost">
-                        <span class="product-card__price">10 799 ₽</span>
-                        <span class="product-card__sale _sale">17 000 ₽</span>
-                      </div>
-                      <ul class="product-card__tags">
-                        <li class="product-card__tag product-card__tag_event">Акция</li>
-                      </ul>
-                    </div>
-                    <div class="product-card__action">
-                      <button
-                        class="product-card__favourites icon-fav _is-active"
-                        type="button"
-                        title="Добавить в избранное"
-                        data-favourites
-                      >
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                      <div class="product-card__quantity">
-                        <div class="quantity quantity_small" data-quantity>
-                          <button
-                            class="quantity__btn icon-minus"
-                            type="button"
-                            data-quantity-button="minus"
-                          >
-                            <span class="_seo">Меньше</span>
-                          </button>
-                          <div class="quantity__main">
-                            <input class="quantity__input" type="text" value="1"
-                              data-quantity-value
-                              data-quantity-min="1"
-                              data-quantity-max="9999"
-                            >
-                          </div>
-                          <button
-                            class="quantity__btn icon-plus"
-                            type="button"
-                            data-quantity-button="plus"
-                          >
-                            <span class="_seo">Больше</span>
-                          </button>
-                        </div>
-                        <button
-                          class="product-card__buy icon-plus"
-                          data-buy
-                          type="button"
-                          title="Добавить в корзину"
-                        >
-                          <span class="_seo">Добавить в корзину</span>
-                        </button>
-                      </div>
+                  <div class="cabinet__item cabinet__item_bonus">
+                    <div class="user-bonus">
+                      <div class="user-bonus__desc">Ваш баланс бонусов</div>
+                      <div class="user-bonus__num">200 000</div>
+                      <a class="user-bonus__link icon-arr-right" href="#">
+                        <span class="_seo">Перейти к бонусам</span>
+                      </a>
                     </div>
                   </div>
-                </article>
-                <article class="product-card">
-                  <a class="product-card__link" href="./product.html">
-                    <span class="_seo">Темпер JoeFrex D58 Galaxy желтый классический</span>
-                  </a>
-                  <figure class="product-card__img-box">
-                    <picture><source srcset="./img/content/pic/product-5.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-5.png" alt="image"></picture>
-                  </figure>
-                  <div class="product-card__content">
-                    <h3 class="product-card__title">Темпер JoeFrex D58 Galaxy желтый классический</h3>
-                    <div class="product-card__type">Мерный инвентарь</div>
-                  </div>
-                  <div class="product-card__footer">
-                    <div class="product-card__info">
-                      <div class="product-card__cost">
-                        <span class="product-card__price">500 ₽</span>
-                        <span class="product-card__sale _sale">700 ₽</span>
-                      </div>
-                      <ul class="product-card__tags">
-                        <li class="product-card__tag product-card__tag_event">Акция</li>
-                      </ul>
-                    </div>
-                    <div class="product-card__action">
-                      <button
-                        class="product-card__favourites icon-fav _is-active"
-                        type="button"
-                        title="Добавить в избранное"
-                        data-favourites
-                      >
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                      <div class="product-card__quantity">
-                        <div class="quantity quantity_small" data-quantity>
-                          <button
-                            class="quantity__btn icon-minus"
-                            type="button"
-                            data-quantity-button="minus"
-                          >
-                            <span class="_seo">Меньше</span>
-                          </button>
-                          <div class="quantity__main">
-                            <input class="quantity__input" type="text" value="1"
-                              data-quantity-value
-                              data-quantity-min="1"
-                              data-quantity-max="9999"
-                            >
-                          </div>
-                          <button
-                            class="quantity__btn icon-plus"
-                            type="button"
-                            data-quantity-button="plus"
-                          >
-                            <span class="_seo">Больше</span>
-                          </button>
-                        </div>
-                        <button
-                          class="product-card__buy icon-plus"
-                          data-buy
-                          type="button"
-                          title="Добавить в корзину"
-                        >
-                          <span class="_seo">Добавить в корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article class="product-card">
-                  <a class="product-card__link" href="./product.html">
-                    <span class="_seo">Authentic grenadine</span>
-                  </a>
-                  <figure class="product-card__img-box">
-                    <picture><source srcset="./img/content/pic/product-6.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-6.png" alt="image"></picture>
-                  </figure>
-                  <div class="product-card__content">
-                    <h3 class="product-card__title">Authentic grenadine</h3>
-                    <div class="product-card__type">Риммеры</div>
-                  </div>
-                  <div class="product-card__footer">
-                    <div class="product-card__info">
-                      <div class="product-card__cost">
-                        <span class="product-card__price">10 000 ₽</span>
-                      </div>
-                      <ul class="product-card__tags">
-                        <li class="product-card__tag product-card__tag_event">Акция</li>
-                      </ul>
-                    </div>
-                    <div class="product-card__action">
-                      <button
-                        class="product-card__favourites icon-fav _is-active"
-                        type="button"
-                        title="Добавить в избранное"
-                        data-favourites
-                      >
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                      <div class="product-card__quantity">
-                        <div class="quantity quantity_small" data-quantity>
-                          <button
-                            class="quantity__btn icon-minus"
-                            type="button"
-                            data-quantity-button="minus"
-                          >
-                            <span class="_seo">Меньше</span>
-                          </button>
-                          <div class="quantity__main">
-                            <input class="quantity__input" type="text" value="1"
-                              data-quantity-value
-                              data-quantity-min="1"
-                              data-quantity-max="9999"
-                            >
-                          </div>
-                          <button
-                            class="quantity__btn icon-plus"
-                            type="button"
-                            data-quantity-button="plus"
-                          >
-                            <span class="_seo">Больше</span>
-                          </button>
-                        </div>
-                        <button
-                          class="product-card__buy icon-plus"
-                          data-buy
-                          type="button"
-                          title="Добавить в корзину"
-                        >
-                          <span class="_seo">Добавить в корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article class="product-card">
-                  <a class="product-card__link" href="./product.html">
-                    <span class="_seo">Authentic grenadine/Гренадин -Старинный рецепт</span>
-                  </a>
-                  <figure class="product-card__img-box">
-                    <picture><source srcset="./img/content/pic/product-7.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-7.png" alt="image"></picture>
-                  </figure>
-                  <div class="product-card__content">
-                    <h3 class="product-card__title">Authentic grenadine/Гренадин -Старинный рецепт</h3>
-                    <div class="product-card__type">Сифоны и кремеры</div>
-                  </div>
-                  <div class="product-card__footer">
-                    <div class="product-card__info">
-                      <div class="product-card__cost">
-                        <span class="product-card__price">10 799 ₽</span>
-                        <span class="product-card__sale _sale">17 000 ₽</span>
-                      </div>
-                      <ul class="product-card__tags">
-                        <li class="product-card__tag product-card__tag_event">Акция</li>
-                      </ul>
-                    </div>
-                    <div class="product-card__action">
-                      <button
-                        class="product-card__favourites icon-fav _is-active"
-                        type="button"
-                        title="Добавить в избранное"
-                        data-favourites
-                      >
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                      <div class="product-card__quantity">
-                        <div class="quantity quantity_small" data-quantity>
-                          <button
-                            class="quantity__btn icon-minus"
-                            type="button"
-                            data-quantity-button="minus"
-                          >
-                            <span class="_seo">Меньше</span>
-                          </button>
-                          <div class="quantity__main">
-                            <input class="quantity__input" type="text" value="1"
-                              data-quantity-value
-                              data-quantity-min="1"
-                              data-quantity-max="9999"
-                            >
-                          </div>
-                          <button
-                            class="quantity__btn icon-plus"
-                            type="button"
-                            data-quantity-button="plus"
-                          >
-                            <span class="_seo">Больше</span>
-                          </button>
-                        </div>
-                        <button
-                          class="product-card__buy icon-plus"
-                          data-buy
-                          type="button"
-                          title="Добавить в корзину"
-                        >
-                          <span class="_seo">Добавить в корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article class="product-card">
-                  <a class="product-card__link" href="./product.html">
-                    <span class="_seo">Гренадин -Старинный рецепт</span>
-                  </a>
-                  <figure class="product-card__img-box">
-                    <picture><source srcset="./img/content/pic/product-9.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-9.png" alt="image"></picture>
-                  </figure>
-                  <div class="product-card__content">
-                    <h3 class="product-card__title">Гренадин -Старинный рецепт</h3>
-                    <div class="product-card__type">Струбцина для бутылок</div>
-                  </div>
-                  <div class="product-card__footer">
-                    <div class="product-card__info">
-                      <div class="product-card__cost">
-                        <span class="product-card__price">10 799 ₽</span>
-                        <span class="product-card__sale _sale">17 000 ₽</span>
-                      </div>
-                      <ul class="product-card__tags">
-                        <li class="product-card__tag product-card__tag_event">Акция</li>
-                      </ul>
-                    </div>
-                    <div class="product-card__action">
-                      <button
-                        class="product-card__favourites icon-fav _is-active"
-                        type="button"
-                        title="Добавить в избранное"
-                        data-favourites
-                      >
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                      <div class="product-card__quantity">
-                        <div class="quantity quantity_small" data-quantity>
-                          <button
-                            class="quantity__btn icon-minus"
-                            type="button"
-                            data-quantity-button="minus"
-                          >
-                            <span class="_seo">Меньше</span>
-                          </button>
-                          <div class="quantity__main">
-                            <input class="quantity__input" type="text" value="1"
-                              data-quantity-value
-                              data-quantity-min="1"
-                              data-quantity-max="9999"
-                            >
-                          </div>
-                          <button
-                            class="quantity__btn icon-plus"
-                            type="button"
-                            data-quantity-button="plus"
-                          >
-                            <span class="_seo">Больше</span>
-                          </button>
-                        </div>
-                        <button
-                          class="product-card__buy icon-plus"
-                          data-buy
-                          type="button"
-                          title="Добавить в корзину"
-                        >
-                          <span class="_seo">Добавить в корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
+                </div>
+                <ul class="cabinet-nav">
+                  <li class="cabinet-nav__item">
+                    <a class="cabinet-nav__link icon-arr-right" href="./favorites.html">
+                      <span class="cabinet-nav__title icon-favorites">Избранное</span>
+                      <span class="cabinet-nav__desc">0 товаров</span>
+                    </a>
+                  </li>
+                  <li class="cabinet-nav__item">
+                    <a class="cabinet-nav__link icon-arr-right" href="./orders.html">
+                      <span class="cabinet-nav__title icon-receipt">Заказы</span>
+                      <span class="cabinet-nav__desc">5 заказов</span>
+                    </a>
+                  </li>
+                  <li class="cabinet-nav__item">
+                    <a class="cabinet-nav__link icon-arr-right" href="./profile.html">
+                      <span class="cabinet-nav__title icon-users">Профиль клиента</span>
+                      <span class="cabinet-nav__desc">1 профиль</span>
+                    </a>
+                  </li>
+                  <!-- <li class="cabinet-nav__item">
+                    <a class="cabinet-nav__link icon-arr-right" href="#">
+                      <span class="cabinet-nav__title icon-disscount">Промокоды</span>
+                      <span class="cabinet-nav__desc">NuN</span>
+                    </a>
+                  </li> -->
+                </ul>
               </div>
             </div>
           </div>
