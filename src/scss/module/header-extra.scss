@@ -1,0 +1,244 @@
+.header-extra {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+
+  @media (min-width: ($md2+px)) {
+    // от 1024px
+    flex-direction: row;
+    gap: 22px;
+
+    @media (max-width: ($md1+px)) {
+      // до контейнера
+      font-size: var(--text-small);
+    }
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    gap: 28px;
+  }
+
+  &__item {
+    flex-shrink: 0;
+
+    & + & {
+      @media (max-width: ($md2+px)) {
+        // до 1024px
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: var(--width-page);
+          height: 1px;
+          background-color: var(--color-shadow);
+        }
+      }
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+
+    @media (max-width: ($md2+px)) {
+      // до 1024px
+      width: 100%;
+    }
+
+    &::before {
+      order: 1;
+      margin-bottom: -0.25em;
+      margin-left: var(--gap-small);
+      font-size: var(--text-smaller);
+    }
+
+    &_geo {
+      @media (max-width: ($md2+px)) {
+        // до 1024px
+        padding: 28px 0;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &_contacts {
+      @media (max-width: ($md2+px)) {
+        // до 1024px
+        display: none;
+      }
+    }
+  }
+
+  &__label {
+    margin-right: var(--gap-normal);
+    font-weight: 400;
+  }
+
+  &__text {
+  }
+
+  &__dropdown {
+    padding: 26px 0;
+    @extend %scrollbar;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      position: fixed;
+      z-index: -5;
+      top: 50px;
+      right: calc(50% - 0.5 * var(--width-container));
+      width: 264px;
+      max-height: calc(var(--height-page) - 60px);
+      padding: 20px;
+      background-color: var(--color-neutral);
+      border-radius: var(--radius-smallest);
+      box-shadow: 0 5px 30px 0 rgba(142, 142, 142, 0.14);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      ._is-header-extra-open & {
+        z-index: 9;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    }
+
+    @media (max-width: ($md2+px)) {
+      // до 1024px
+      overflow: visible;
+    }
+  }
+
+  &__content {
+  }
+
+  &__box {
+    & + & {
+      position: relative;
+      padding-top: 27px;
+      margin-top: 26px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: var(--width-page);
+        height: 1px;
+        background-color: var(--color-shadow);
+      }
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        padding-top: 24px;
+        margin-top: 24px;
+        border-top: 1px solid var(--color-shadow);
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &_call {
+    }
+
+    &_contacts {
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 26px;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      margin-top: 24px;
+    }
+  }
+}
+
+.extra-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &_inverse {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__name {
+    font-size: var(--text-small);
+    color: var(--color-label);
+  }
+
+  &__desc {
+    font-size: var(--text-medium);
+    line-height: 1.1;
+
+    & > a {
+      font-weight: 500;
+      color: var(--color-accent);
+      @extend %transition;
+
+      &:focus-visible {
+        outline: none;
+        color: var(--color-accent-light);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          color: var(--color-accent-light);
+        }
+      }
+
+      &:active {
+      }
+
+      &[href^="tel:"] {
+        font-size: var(--text-larger);
+        color: var(--color-main);
+
+        &:focus-visible {
+          color: var(--color-main-light);
+        }
+
+        @media (any-hover: hover) {
+          &:not(:active):hover {
+            color: var(--color-main-light);
+          }
+        }
+
+        &:active {
+        }
+      }
+    }
+  }
+}

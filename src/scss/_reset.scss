@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition-timing-function: ease-in-out;
+}
+
+ul,
+summary {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  object-position: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  user-select: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input,
+textarea {
+  border-radius: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: transparent;
+  transition: background-color 600s ease-in-out 0s;
+}
+
+button,
+summary {
+  cursor: pointer;
+}
+
+[href^="tel:"] {
+  white-space: nowrap;
+}
+
+[type="search"]::-webkit-search-decoration,
+[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+}
+[type="search"] {
+  appearance: textfield;
+  outline-offset: -2px; /* Fix outline style in Safari */
+}
+
+html,
+body {
+  height: 100%;
+}

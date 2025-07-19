@@ -1,0 +1,70 @@
+.catalog-nav {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: ($md3+px)) {
+    // от 767рх
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-normal-extra);
+    padding: 12px 6px;
+    font-size: var(--text-normal);
+    line-height: 1.2;
+    color: var(--color-main);
+    border: none;
+    @extend %transition;
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      padding: 12px 0;
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      flex-direction: row-reverse;
+      padding: 8px 12px 8px 15px;
+      background-color: var(--color-shadow-lightest);
+      border-radius: var(--radius-smallest);
+
+      &:not(&_active):focus-visible {
+        outline: none;
+        background-color: var(--color-shadow);
+      }
+
+      @media (any-hover: hover) {
+        &:not(&_active):not(:active):hover {
+          background-color: var(--color-shadow);
+        }
+      }
+
+      &:active {
+      }
+    }
+
+    &::before {
+      font-size: var(--text-small);
+
+      @media (max-width: ($md3+px)) {
+        // до 767рх
+        display: none;
+      }
+    }
+
+    &_active {
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        color: var(--color-neutral);
+        background-color: var(--color-main);
+        pointer-events: none;
+      }
+    }
+  }
+}

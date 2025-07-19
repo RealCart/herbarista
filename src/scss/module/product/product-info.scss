@@ -1,0 +1,53 @@
+.product-info {
+  display: grid;
+  gap: 14px;
+
+  @media (min-width: ($md11+px)) {
+    // от доп1
+    padding: 0 var(--gap-product);
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    gap: 18px;
+  }
+
+  &__box {
+    display: grid;
+    gap: var(--gap-normal);
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: var(--text-normal);
+    color: var(--color-shadow-dark);
+  }
+
+  &__text {
+    line-height: 1.1;
+  }
+
+  &__anchor {
+    justify-self: start;
+    font-weight: 500;
+    color: var(--color-accent);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      color: var(--color-accent-light);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        color: var(--color-accent-light);
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  &__content {
+  }
+}

@@ -1,0 +1,364 @@
+.popup {
+  position: fixed;
+  z-index: -5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-main-30);
+  @extend %transition;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &._is-open {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    max-width: var(--width-page);
+    max-height: calc(0.95 * var(--height-page));
+    background-color: var(--color-neutral);
+    border-radius: var(--radius-smallest);
+    box-shadow: 0 5px 30px 0 rgba(142, 142, 142, 0.14);
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: var(--text-large);
+    color: var(--color-main);
+    background-color: transparent;
+    border: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  &__inner {
+    flex-shrink: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    max-height: 100%;
+    @extend %scrollbar;
+  }
+
+  &__content {
+    padding: 18px 12px;
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      padding: 18px;
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      padding: 24px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding: 32px;
+    }
+
+    &_small {
+      max-width: 360px;
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        max-width: 400px;
+      }
+
+      @media (min-width: ($md1+px)) {
+        // от контейнера
+        max-width: 460px;
+      }
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 18px;
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        margin-bottom: 24px;
+      }
+
+      @media (min-width: ($md1+px)) {
+        // от контейнера
+        margin-bottom: 32px;
+      }
+    }
+
+    &_center {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        margin-bottom: 12px;
+      }
+
+      @media (min-width: ($md1+px)) {
+        // от контейнера
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__text {
+    text-wrap: balance;
+    font-size: var(--text-small);
+    line-height: 1.1;
+    color: var(--color-shadow-darkest);
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-normal);
+    }
+  }
+}
+
+.cookies {
+  position: fixed;
+  z-index: 9;
+  right: 0;
+  left: 0;
+  bottom: var(--height-menu);
+  display: flex;
+  flex-direction: column;
+  gap: 14px 60px;
+  padding: 16px;
+  margin: 0 var(--gap-small) var(--padding-page);
+  background-color: var(--color-neutral);
+  box-shadow: 0 5px 30px 0 rgba(142, 142, 142, 0.14);
+
+  @media (min-width: ($md5+px)) {
+    // от 480рх
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 16px 22px;
+  }
+
+  @media (min-width: ($md4+px)) {
+    // от 576рх
+    left: auto;
+    right: calc(50% - 0.5 * var(--width-container));
+    margin: 0 0 22px;
+    max-width: 560px;
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    margin: 0 0 38px;
+  }
+
+  &__text {
+    font-weight: 500;
+
+    a {
+      color: var(--color-accent);
+      @extend %transition;
+
+      &:focus-visible {
+        outline: none;
+        color: var(--color-accent-light);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          color: var(--color-accent-light);
+        }
+      }
+
+      &:active {
+      }
+    }
+  }
+
+  &__btn {
+  }
+}
+
+.callback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  @media (min-width: ($md3+px)) {
+    // от 767рх
+    gap: 24px;
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    gap: 32px;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      gap: 12px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      gap: 16px;
+    }
+  }
+
+  &__agpee {
+  }
+
+  &__action {
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
+
+.form-geo {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  @media (min-width: ($md3+px)) {
+    // от 767рх
+    gap: 24px;
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    gap: 32px;
+  }
+
+  &__related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__variable {
+    &_active {
+      color: var(--color-neutral);
+      background-color: var(--color-main);
+      pointer-events: none;
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    max-width: 100%;
+    height: 48px;
+    padding: 0 50px 0 18px;
+    font-size: var(--text-normal);
+    color: var(--color-main);
+    background-color: var(--color-shadow-lightest);
+    border: 1px solid transparent;
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    &::placeholder {
+      color: var(--color-label);
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      display: none !important;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: var(--color-shadow-dark);
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        border-color: var(--color-shadow-dark);
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    font-size: var(--text-large);
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-accent-light);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-accent-light);
+      }
+    }
+
+    &:active {
+    }
+  }
+}

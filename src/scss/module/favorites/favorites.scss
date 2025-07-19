@@ -1,0 +1,84 @@
+.favorites {
+  &__body {
+  }
+
+  &__items {
+    display: grid;
+    @extend %gridfix;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gap-small);
+    row-gap: 20px;
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      row-gap: 25px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      row-gap: 30px;
+    }
+  }
+}
+
+.favorites-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 280px;
+  padding: 66px 0 110px;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: ($md4+px)) {
+    // от 576рх
+    max-width: 500px;
+    padding: 76px 0 90px;
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    padding: 90px 0 80px;
+  }
+
+  &__text {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  &__slogan {
+    margin-bottom: 54px;
+    @extend %Denistina400;
+    font-size: 60px;
+    line-height: 0.5;
+    color: var(--color-secondary);
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      font-size: 70px;
+    }
+
+    &:not(:first-child) {
+      margin-top: -2px;
+
+      @media (min-width: ($md4+px)) {
+        // от 576рх
+        margin-top: -18px;
+      }
+    }
+  }
+
+  &__btn {
+    @media (max-width: ($md4+px)) {
+      // до 576рх
+      min-width: 230px;
+    }
+  }
+}

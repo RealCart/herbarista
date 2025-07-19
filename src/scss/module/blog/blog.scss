@@ -1,0 +1,30 @@
+.blog {
+  &__body {
+    position: relative;
+  }
+
+  &__items {
+    display: grid;
+    gap: var(--gap-small);
+
+    @media (min-width: ($md5+px)) {
+      // от 480рх
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      gap: var(--gap-normal);
+    }
+  }
+}

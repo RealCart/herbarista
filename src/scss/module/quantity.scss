@@ -1,0 +1,70 @@
+.quantity {
+  display: flex;
+  width: calc(3.2 * var(--width-quantity));
+  font-size: calc(0.5 * var(--width-quantity));
+  line-height: 1;
+  background-color: var(--color-main);
+  border-radius: var(--radius-smallest);
+  overflow: hidden;
+
+  .product-card__quantity & {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &_small {
+    --width-quantity: var(--width-quantity-small);
+  }
+
+  &_large {
+    width: 100%;
+    --width-quantity: var(--height-btn-normal-extra);
+  }
+
+  &__btn,
+  &__input {
+    height: var(--width-quantity);
+    font-size: inherit;
+    color: var(--color-neutral);
+    border: none;
+    border-radius: var(--radius-smallest);
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--width-quantity);
+    background-color: var(--color-main);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-main-light);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-main-light);
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  &__main {
+    flex-grow: 1;
+    max-width: calc(100% - 2 * var(--width-quantity));
+  }
+
+  &__input {
+    min-width: 0;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
+  }
+}

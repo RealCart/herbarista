@@ -1,0 +1,193 @@
+.cabinet-extra {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &__items {
+    position: relative;
+    display: flex;
+    width: 100%;
+    will-change: transform;
+  }
+
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+
+    ._is-init & {
+      margin-right: 0;
+    }
+
+    &_visible {
+    }
+
+    &_shown {
+    }
+
+    &_active {
+      position: relative;
+      z-index: 1;
+    }
+
+    &_prev {
+    }
+
+    &_next {
+    }
+  }
+
+  &__actions {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-normal);
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      right: 26px;
+      bottom: 26px;
+    }
+  }
+
+  &__btn {
+    --height-btn: 30px;
+    position: relative;
+    font-size: var(--text-medium);
+
+    &_prev {
+    }
+
+    &_next {
+    }
+
+    &_disabled {
+    }
+
+    &_is-lock {
+    }
+  }
+
+  &__link {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 70%;
+    min-height: 236px;
+    padding: 24px 18px 60px;
+    color: var(--color-neutral);
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 160px;
+      padding: 34px 34px 38px;
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      min-height: 194px;
+      padding: 46px 46px 50px;
+    }
+  }
+
+  &__title {
+    line-height: 1;
+
+    @media (max-width: ($md3+px)) {
+      // до 767рх
+      --title-1: 28px;
+    }
+
+    @media (max-width: ($md4+px)) {
+      // до 576рх
+      --title-1: 22px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        margin-bottom: 24px;
+      }
+
+      @media (min-width: ($md11+px)) {
+        // от доп1
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: var(--text-normal);
+    line-height: 1.1;
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      font-size: var(--text-medium);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    color: var(--color-neutral);
+    opacity: 0.5;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      top: 26px;
+      right: 26px;
+    }
+
+    &:focus-visible {
+      opacity: 1;
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+    }
+
+    &::before {
+      font-size: calc(0.5 * var(--height-btn));
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        font-size: calc(0.75 * var(--height-btn));
+      }
+    }
+  }
+}

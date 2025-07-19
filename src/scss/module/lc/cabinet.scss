@@ -1,0 +1,82 @@
+.cabinet {
+  &__body {
+    display: grid;
+    @extend %gridfix;
+    gap: 30px;
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      gap: 40px;
+    }
+  }
+
+  &__main {
+    --height-lc-card: 90px;
+    --padding-card: 14px;
+    display: grid;
+    @extend %gridfix;
+    gap: var(--gap-small);
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      --height-lc-card: 110px;
+      --padding-card: 20px;
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      gap: 14px var(--gap-small);
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      --height-lc-card: 132px;
+      gap: 28px var(--gap-small);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-small);
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    &_badge {
+      flex-basis: 50%;
+    }
+
+    &_bonus {
+      flex-basis: 10%;
+    }
+  }
+
+  &__orders {
+  }
+
+  &__head {
+    margin-bottom: 30px;
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+  }
+
+  &__link {
+  }
+}

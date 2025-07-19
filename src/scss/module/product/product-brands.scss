@@ -1,0 +1,17 @@
+.product-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-small);
+
+  &__link {
+    flex-shrink: 0;
+    height: 32px;
+  }
+
+  &__img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}

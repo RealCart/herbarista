@@ -1,0 +1,84 @@
+._wysiwyg {
+  font-size: var(--text-normal);
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    font-size: var(--text-medium);
+  }
+
+  h2 {
+    margin: var(--gap-normal) 0;
+  }
+
+  h3 {
+    margin: var(--gap-normal) 0;
+  }
+
+  p,
+  ul,
+  ol,
+  li,
+  img,
+  blockquote,
+  table {
+    // margin: var(--gap-normal) 0;
+  }
+
+  a {
+    font-weight: 600;
+    color: inherit;
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      color: var(--color-accent);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        color: var(--color-accent);
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  ul {
+    padding-left: 1.5em;
+    list-style: disc;
+  }
+
+  // ol li > *:first-child {
+  //   display: inline;
+  // }
+
+  // & > ol > li::before {
+  //   font-weight: 700;
+  //   font-size: var(--text-large);
+  // }
+
+  // ol {
+  //   list-style: none;
+  //   counter-reset: num;
+
+  //   > li {
+  //     &::before {
+  //       counter-increment: num;
+  //       content: counters(num, ".") ". ";
+  //     }
+  //   }
+  // }
+
+  & * {
+    overflow-wrap: break-word;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

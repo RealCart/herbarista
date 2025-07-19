@@ -1,0 +1,57 @@
+.product-version {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-small);
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    text-align: center;
+    font-size: var(--text-normal);
+    line-height: 1.1;
+    color: var(--color-main);
+    background-color: var(--color-shadow-lightest);
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-shadow);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-shadow);
+      }
+    }
+
+    &:active {
+    }
+
+    &_active {
+      color: var(--color-neutral);
+      background-color: var(--color-main);
+      cursor: default;
+      pointer-events: none;
+
+      &:focus-visible {
+        background-color: var(--color-main-light);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          background-color: var(--color-main-light);
+        }
+      }
+
+      &:active {
+      }
+    }
+  }
+}

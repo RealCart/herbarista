@@ -1,0 +1,57 @@
+.social {
+  --color-social-icon: var(--color-neutral);
+  --color-social-bg: var(--color-main);
+  --color-social-bg-hover: var(--color-main-light);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  .footer & {
+    --color-social-icon: var(--color-main);
+    --color-social-bg: var(--color-secondary);
+    --color-social-bg-hover: var(--color-secondary-dark);
+  }
+
+  .extra-list & {
+    padding-top: 4px;
+  }
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-social-icon);
+    background-color: var(--color-social-bg);
+    border-radius: 7px;
+    overflow: hidden;
+    @extend %transition;
+
+    svg {
+      aspect-ratio: 1/1;
+      width: 31px;
+      height: auto;
+
+      path {
+        fill: currentColor;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-social-bg-hover);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-social-bg-hover);
+      }
+    }
+
+    &:active {
+    }
+  }
+}

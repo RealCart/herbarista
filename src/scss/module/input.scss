@@ -1,0 +1,101 @@
+.input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &_middle {
+    --padding-input: 12px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      --padding-input: 18px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      --padding-input: 24px;
+    }
+
+    .input__placeholder {
+      top: calc(0.5 * var(--height-input) - 0.5 * var(--text-normal));
+    }
+  }
+
+  &__body {
+    height: var(--height-input);
+    padding-top: 16px;
+    padding-right: var(--padding-input);
+    padding-left: var(--padding-input);
+    font-size: var(--text-normal);
+    line-height: 1;
+    background-color: var(--color-shadow-lightest);
+    border: 1px solid transparent;
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    // textarea.&
+    @include unify-parent("textarea") {
+      padding-bottom: 5px;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: var(--color-shadow-dark);
+    }
+
+    &:focus-visible,
+    &:target,
+    &:focus,
+    &:not(:placeholder-shown) {
+      & ~ .input__placeholder {
+        top: 8px;
+        transform: scale(0.85);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        border-color: var(--color-shadow-dark);
+      }
+    }
+
+    &:active {
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &_contour {
+      color: var(--color-neutral);
+      background-color: transparent;
+      border-color: var(--color-secondary);
+
+      &:focus-visible {
+        border-color: var(--color-secondary-dark);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          border-color: var(--color-secondary-dark);
+        }
+      }
+
+      &:active {
+      }
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: calc(16px + 0.5 * (var(--height-input) - 16px) - 0.5em);
+    left: var(--padding-input);
+    margin-left: 1px;
+    font-size: var(--text-normal);
+    line-height: 1;
+    color: var(--color-shadow-dark);
+    transform-origin: left center;
+    transition-duration: var(--transition-duration);
+    transition-property: color, background-color, border-color, opacity, transform, top;
+  }
+}

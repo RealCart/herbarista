@@ -1,0 +1,78 @@
+.welcome {
+  overflow: hidden;
+
+  &__body {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      display: flex;
+    }
+  }
+
+  &__main {
+    --width-welcome-slider: var(--width-page);
+    width: var(--width-welcome-slider);
+    margin-right: calc(-1 * var(--padding-page));
+    margin-left: calc(-1 * var(--padding-page));
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      --width-welcome-slider: var(--width-container);
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      flex-shrink: 0;
+    }
+
+    &:not(:last-child) {
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        --width-welcome-slider: calc(0.7 * var(--width-container) - var(--gap-small));
+        margin-right: var(--gap-small);
+      }
+
+      @media (min-width: ($md11+px)) {
+        // от доп1
+        --width-welcome-slider: calc(0.76 * var(--width-container) - var(--gap-normal));
+        margin-right: var(--gap-normal);
+      }
+    }
+  }
+
+  &__extra {
+    margin-top: var(--gap-section);
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      flex-shrink: 0;
+      width: 30%;
+      margin-top: 0;
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      width: 24%;
+    }
+  }
+
+  &__head {
+    padding-bottom: var(--gap-section-head);
+    text-align: center;
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      padding-right: 20%;
+      padding-left: 20%;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      display: none;
+    }
+  }
+
+  &__title {
+  }
+}

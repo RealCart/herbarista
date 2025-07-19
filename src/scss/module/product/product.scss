@@ -1,0 +1,226 @@
+.product {
+  --gap-product: 28px;
+
+  @media (min-width: ($md2+px)) {
+    // от 1024px
+    --gap-product: 32px;
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    --gap-product: 38px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: var(--gap-product);
+
+    .product__wrapper {
+      padding-bottom: var(--gap-product);
+      border-bottom: 1px solid var(--color-main);
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-normal) calc(2 * var(--gap-normal));
+    margin-bottom: 18px;
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      margin-top: calc(-1.2 * var(--gap-section-head));
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      margin-bottom: 30px;
+    }
+  }
+
+  &__head-item {
+  }
+
+  &__head-text {
+    line-height: 1;
+    color: var(--color-label);
+  }
+
+  &__head-link {
+    line-height: 1;
+    color: var(--color-label);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      color: var(--color-main-light);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        color: var(--color-main-light);
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__main {
+    display: grid;
+    @extend %gridfix;
+    margin-bottom: 28px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-start;
+      padding-bottom: var(--gap-product);
+      margin-bottom: var(--gap-product);
+      border-bottom: 1px solid var(--color-main);
+    }
+  }
+
+  &__media {
+    display: flex;
+    gap: var(--gap-small);
+    margin-bottom: var(--gap-product);
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      position: sticky;
+      top: calc(var(--height-header) - var(--height-header-scroll-scale) + 2 * var(--gap-normal));
+      margin-bottom: 0;
+      transition-duration: var(--transition-duration);
+      transition-property: top;
+    }
+  }
+
+  &__thumbs {
+    position: relative;
+    display: none;
+
+    @media (min-width: ($md5+px)) {
+      // от 480рх
+      display: block;
+      flex-shrink: 0;
+      width: 20%;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    max-width: 100%;
+
+    @media (min-width: ($md5+px)) {
+      // от 480рх
+      flex-grow: 1;
+      max-width: calc(80% - var(--gap-small));
+    }
+  }
+
+  &__tags {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    max-width: 70%;
+    font-size: var(--text-smaller);
+    color: var(--color-neutral);
+    pointer-events: none;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      top: 10px;
+      left: 10px;
+      font-size: var(--text-small);
+    }
+  }
+
+  &__tag {
+    padding: 1px 4px;
+    @extend %SONGER400;
+    line-height: 1;
+    border-radius: 100px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      font-weight: 400;
+    }
+
+    &_event {
+      background-color: var(--color-warning);
+    }
+
+    &_status {
+      background-color: var(--color-notify);
+    }
+
+    &_type {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__content {
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      @media (max-width: ($md11+px)) {
+        // до доп1
+        margin-left: var(--gap-product);
+      }
+    }
+  }
+
+  &__order-mob {
+    margin-top: 14px;
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      display: none;
+    }
+  }
+
+  &__specs {
+  }
+
+  &__order {
+    order: 1;
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      position: sticky;
+      top: calc(var(--height-header) - var(--height-header-scroll-scale) + 2 * var(--gap-normal));
+      flex-shrink: 0;
+      width: 300px;
+      margin-left: 24px;
+      transition-duration: var(--transition-duration);
+      transition-property: top;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      width: 352px;
+      margin-left: 30px;
+    }
+  }
+}

@@ -1,0 +1,405 @@
+.assortment {
+  --width-assortment-list: 320px;
+  --padding-assortment: 20px;
+  order: -1;
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    --width-assortment-list: 394px;
+    --padding-assortment: 32px;
+  }
+
+  .header__inner > & {
+    @media (max-width: ($md2+px)) {
+      // до 1024px
+      display: none;
+    }
+  }
+
+  &__btn {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      @media (max-width: ($md1+px)) {
+        // до контейнера
+        padding: calc(0.2 * var(--height-btn)) calc(0.35 * var(--height-btn));
+      }
+    }
+
+    @media (max-width: ($md2+px)) {
+      // до 1024px
+      justify-content: space-between;
+      width: 100%;
+      min-height: auto;
+      padding: 10px 0;
+      font-family: Involve, sans-serif;
+      font-weight: 400;
+      text-transform: none;
+      color: var(--color-main) !important;
+      background-color: transparent !important;
+    }
+
+    &::before {
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        content: "\e903";
+        margin-right: calc(0.35 * var(--height-btn));
+
+        ._is-assortment-open & {
+          content: "\e907";
+          transform: scale(1.25);
+        }
+      }
+
+      @media (min-width: ($md1+px)) {
+        // от контейнера
+        margin-right: calc(0.5 * var(--height-btn));
+      }
+
+      @media (max-width: ($md2+px)) {
+        // до 1024px
+        order: 1;
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    background-color: var(--color-neutral);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition-duration: var(--transition-duration);
+    transition-property: transform, max-height;
+    @extend %scrollbar;
+
+    ._is-assortment-open & {
+      z-index: 9;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 992px
+      top: 100%;
+      bottom: auto;
+      max-height: calc(
+        var(--height-page) - var(--height-header) - var(--height-userbar) +
+          var(--height-header-scroll-scale)
+      );
+    }
+  }
+
+  &__body {
+    position: relative;
+    max-width: 100%;
+    padding: 0 var(--padding-page);
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 68px;
+    text-align: left;
+    color: var(--color-main);
+    background-color: transparent;
+    border: none;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      width: var(--width-assortment-list);
+      padding: var(--padding-assortment) var(--padding-assortment) 0;
+      margin-bottom: var(--padding-assortment);
+      font-family: SONGER, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: var(--text-large);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      pointer-events: none;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-larger);
+    }
+
+    &::before {
+      flex-shrink: 0;
+      margin-right: 12px;
+      font-size: var(--text-medium);
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: var(--width-page);
+      height: 100%;
+      border-bottom: 1px solid var(--color-shadow);
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 0;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      width: var(--width-assortment-list);
+      padding: 0 var(--padding-assortment) var(--padding-assortment);
+    }
+  }
+
+  &__item {
+    & + & {
+      margin-top: 4px;
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        margin-top: 2px;
+      }
+
+      @media (min-width: ($md1+px)) {
+        // от контейнера
+        margin-top: 6px;
+      }
+    }
+
+    ._spoller-open &:not(&[open]) {
+      @media (max-width: ($md2+px)) {
+        // до 1024px
+        display: none;
+      }
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 0;
+    list-style: none;
+    line-height: 1.1;
+    cursor: pointer;
+    transition-duration: var(--transition-duration);
+    transition-property: color, background-color, border-color, opacity, transform, width, padding;
+
+    &:focus-visible {
+      outline: none;
+      color: var(--color-accent);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        color: var(--color-accent);
+      }
+    }
+
+    &:active {
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      padding: 9px 8px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      border-radius: var(--radius-smallest);
+
+      &:focus-visible {
+        padding: 9px 12px;
+        background-color: var(--color-shadow-lightest);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          padding: 9px 12px;
+          background-color: var(--color-shadow-lightest);
+        }
+      }
+
+      &:active {
+      }
+
+      &._spoller-active {
+        padding: 9px 12px;
+        color: var(--color-accent);
+        background-color: var(--color-shadow-lightest);
+        pointer-events: none;
+      }
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-medium);
+    }
+
+    &::before {
+      padding: 0 5px;
+      margin-left: auto;
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        font-size: var(--text-small);
+      }
+    }
+
+    &._spoller-active {
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        padding: 9px 12px;
+        color: var(--color-accent);
+        background-color: var(--color-shadow-lightest);
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-neutral);
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      left: var(--width-assortment-list);
+      border-left: 1px solid var(--color-shadow);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 var(--padding-page);
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 0;
+    gap: 4px;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      gap: var(--padding-assortment);
+      padding: var(--padding-assortment);
+      border-top: 1px solid var(--color-shadow);
+    }
+  }
+}
+
+.assortment-menu {
+  @media (max-width: ($md2+px)) {
+    // до 1024px
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  @media (min-width: ($md2+px)) {
+    // от 1024px
+    column-count: 3;
+    column-gap: 18px;
+  }
+
+  @media (min-width: ($md11+px)) {
+    // от доп1
+    column-count: 4;
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    column-gap: 32px;
+    font-size: var(--text-medium);
+  }
+
+  &__item {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      margin-bottom: 12px;
+      break-inside: avoid;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      margin-bottom: 18px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 0;
+    line-height: 1.1;
+    color: var(--color-main);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      color: var(--color-accent);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        color: var(--color-accent);
+      }
+    }
+
+    &:active {
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      padding: 0;
+    }
+  }
+}
+
+.assortment-brands {
+  display: none;
+
+  @media (min-width: ($md2+px)) {
+    // от 1024px
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__link {
+    display: flex;
+  }
+
+  &__img {
+    width: auto;
+    height: 40px;
+  }
+}

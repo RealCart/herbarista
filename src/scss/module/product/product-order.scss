@@ -1,0 +1,166 @@
+.product-order {
+  display: grid;
+  @extend %gridfix;
+  gap: 14px;
+  padding: 14px;
+  background-color: var(--color-shadow-lightest);
+
+  @media (min-width: ($md3+px)) {
+    // от 767рх
+    padding: 20px;
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    gap: 16px;
+    padding: 26px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-small);
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      gap: var(--gap-normal-extra);
+    }
+  }
+
+  &__tag {
+    padding: 5px 8px;
+    text-align: center;
+    font-size: var(--text-small);
+    line-height: 1.1;
+    color: var(--color-neutral);
+    background-color: var(--color-main);
+    border-radius: var(--radius-smallest);
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding: 6px 12px;
+      font-size: var(--text-normal);
+    }
+
+    &_accent {
+      background-color: var(--color-accent);
+    }
+
+    &_neutral {
+      background-color: var(--color-label);
+    }
+
+    &_negative {
+      background-color: var(--color-shadow-dark);
+    }
+
+    &_warning {
+      background-color: var(--color-warning);
+    }
+  }
+
+  &__cost {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 16px;
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      gap: 8px 22px;
+    }
+  }
+
+  &__price {
+    line-height: 1.1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &:not(:first-child),
+    &:not(:last-child) {
+      color: var(--color-warning);
+    }
+  }
+
+  &__sale {
+    @extend %SONGER500;
+    color: var(--color-label);
+    line-height: 1.1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__desc {
+    font-size: var(--text-small);
+    color: var(--color-main-light);
+  }
+
+  &__action {
+    display: flex;
+    gap: var(--gap-normal-extra);
+  }
+
+  &__quantity {
+    position: relative;
+    flex-grow: 1;
+    border-radius: var(--radius-smallest);
+    background-color: var(--color-main);
+    overflow: hidden;
+
+    &:not(.added) {
+      .quantity {
+        display: none;
+      }
+    }
+
+    &.added {
+      .product-order__btn {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    justify-content: space-between;
+    width: 100%;
+
+    span {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &::before {
+      order: 1;
+    }
+  }
+
+  &__favourites {
+    background-color: var(--color-shadow);
+  }
+
+  &__info {
+    display: grid;
+    gap: 14px;
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      gap: 16px;
+    }
+  }
+
+  &__notify {
+    display: flex;
+    align-items: flex-start;
+    font-size: var(--text-small);
+    color: var(--color-shadow-dark);
+
+    &::before {
+      margin-top: 0.1666em;
+      margin-right: 14px;
+      color: var(--color-main);
+    }
+  }
+}

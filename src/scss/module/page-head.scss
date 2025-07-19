@@ -1,0 +1,170 @@
+.page-head {
+  @media (min-width: ($md4+px)) {
+    // от 576рх
+    margin-bottom: calc(1.2 * var(--gap-section-head));
+
+    .blog & {
+      margin-bottom: calc(0.5 * var(--gap-section-head));
+    }
+
+    .category &,
+    .catalog & {
+      margin-bottom: 0;
+    }
+
+    .cabinet & {
+      @media (min-width: ($md4+px)) {
+        // от 576рх
+        margin-bottom: 28px;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    padding-bottom: 24px;
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding-bottom: 30px;
+    }
+
+    &_border {
+      @media (min-width: ($md4+px)) {
+        // от 576рх
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          height: 1px;
+          width: var(--width-page);
+          background-color: var(--color-shadow);
+        }
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: calc(1.2 * var(--title-2));
+  }
+
+  &__title {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      max-width: 700px;
+    }
+  }
+
+  &__actions {
+    position: relative;
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      padding-right: 20%;
+    }
+
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+
+    .category &,
+    .catalog & {
+      @media (max-width: ($md4+px)) {
+        // до 576рх
+        display: none;
+      }
+    }
+  }
+
+  &__back {
+    order: -1;
+    flex-shrink: 0;
+    margin-right: var(--gap-normal-extra);
+    font-size: var(--text-normal);
+    color: var(--color-main);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      display: none;
+    }
+  }
+}
+
+.page-action {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-small);
+
+  @media (min-width: ($md3+px)) {
+    // от 767рх
+    gap: var(--gap-normal);
+  }
+
+  @media (min-width: ($md1+px)) {
+    // от контейнера
+    gap: var(--gap-normal-extra);
+  }
+
+  &__item {
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    text-align: left;
+    line-height: 1;
+    color: var(--color-main);
+    background-color: var(--color-shadow-lightest);
+    border: none;
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    &:not(&_active):focus-visible {
+      outline: none;
+      background-color: var(--color-shadow);
+    }
+
+    @media (any-hover: hover) {
+      &:not(&_active):not(:active):hover {
+        background-color: var(--color-shadow);
+      }
+    }
+
+    &:active {
+    }
+
+    &.icon-arr-left {
+      min-width: 34px;
+
+      &::before {
+        margin: 0 -14px;
+      }
+    }
+
+    &_accent {
+      color: var(--color-warning);
+    }
+
+    &_active {
+      color: var(--color-neutral);
+      background-color: var(--color-main);
+      pointer-events: none;
+    }
+  }
+}

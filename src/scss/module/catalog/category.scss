@@ -1,0 +1,212 @@
+.category {
+  &__body {
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      padding-top: 26px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding-top: 32px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    @extend %gridfix;
+    gap: var(--gap-small);
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 6px 12px 6px 6px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      display: block;
+      padding: 0;
+    }
+
+    &::before {
+      position: relative;
+      z-index: 1;
+      order: 1;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-left: var(--gap-normal);
+      font-size: var(--text-medium);
+      pointer-events: none;
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-shadow-lightest);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-shadow-light);
+
+      & ~ .category__img-box img {
+        transform: scale(1.1);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-shadow-light);
+
+        & ~ .category__img-box img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    margin: 0 20px 0 0;
+    pointer-events: none;
+    overflow: hidden;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      width: auto;
+      height: 138px;
+      margin: 10px 10px 8px;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      margin: 0;
+      height: 240px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      height: 400px;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: darken;
+    @extend %transition;
+  }
+  &__content {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    pointer-events: none;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      display: block;
+      padding: 0 16px 16px;
+      text-align: center;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      padding: 0 22px 30px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding: 0 30px 45px;
+    }
+  }
+
+  &__name {
+    flex-grow: 1;
+    display: block;
+    line-height: 1.1;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      display: inline;
+    }
+
+    &:not(:last-child) {
+      margin: 0 var(--gap-normal) 0 0;
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        margin: 0 0 var(--gap-small);
+      }
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        margin: 0;
+      }
+    }
+  }
+
+  &__amount {
+    position: relative;
+    flex-shrink: 0;
+    display: block;
+    font-size: 0;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      display: inline;
+      font-size: var(--title-6);
+    }
+
+    span {
+      @extend %SONGER700;
+      font-size: var(--text-normal);
+      color: var(--color-label);
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        font-size: var(--text-smaller);
+      }
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        position: absolute;
+        top: 20%;
+        left: 0;
+        padding-left: 0.2em;
+      }
+    }
+  }
+}

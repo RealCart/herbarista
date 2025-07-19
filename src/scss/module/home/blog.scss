@@ -1,0 +1,119 @@
+.blog-slider {
+  overflow: hidden;
+
+  &__body {
+    padding-top: var(--gap-section);
+  }
+
+  &__head {
+    position: relative;
+    padding-bottom: var(--gap-section-head);
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      padding-right: 20%;
+      padding-left: 20%;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      color: transparent;
+    }
+  }
+
+  &__main {
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      position: relative;
+    }
+  }
+
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    margin-right: var(--gap-small);
+    width: 315px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      width: calc((100% - 2 * var(--gap-small)) / 3);
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      width: calc((100% - 3 * var(--gap-small)) / 4);
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      width: calc((100% - 3 * var(--gap-normal)) / 4);
+      margin-right: var(--gap-normal);
+    }
+
+    ._is-init & {
+      margin-right: 0;
+    }
+
+    &_visible {
+    }
+
+    &_shown {
+    }
+
+    &_active {
+    }
+
+    &_prev {
+    }
+
+    &_next {
+    }
+  }
+
+  &__more {
+    width: 100%;
+    margin-top: 24px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      width: auto;
+      padding: 7px 0;
+      margin-top: 0;
+      margin-bottom: 12px;
+      line-height: 1;
+      background-color: transparent !important;
+      border: none;
+      border-bottom: 1px solid var(--color-secondary);
+
+      &:focus-visible {
+        color: var(--color-accent);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          color: var(--color-accent);
+        }
+      }
+
+      &:active {
+      }
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      margin-bottom: 18px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      margin-bottom: 24px;
+    }
+  }
+}

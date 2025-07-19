@@ -1,0 +1,21 @@
+.related {
+  &__body {
+  }
+
+  &__head {
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      margin-bottom: 40px;
+    }
+  }
+}

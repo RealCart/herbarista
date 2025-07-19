@@ -1,0 +1,355 @@
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @extend %transition;
+
+  &:focus-within {
+    .product-card__img-box img {
+      transform: scale(1.1);
+    }
+
+    .product-card__favourites {
+      opacity: 1;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:not(:active):hover {
+      .product-card__img-box img {
+        transform: scale(1.1);
+      }
+
+      .product-card__favourites {
+        opacity: 1;
+      }
+    }
+  }
+
+  .default-slider & {
+    min-height: 100%;
+  }
+
+  &__link {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &:focus-visible {
+      outline: none;
+
+      & ~ .product-card__img-box img {
+        transform: scale(1.1);
+      }
+
+      & ~ * .product-card__favourites {
+        opacity: 1;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        & ~ .product-card__img-box img {
+          transform: scale(1.1);
+        }
+
+        & ~ * .product-card__favourites {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  &__img-box {
+    background-color: var(--color-shadow-lightest);
+    overflow: hidden;
+  }
+
+  &__img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    @extend %transition;
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px 6px 0;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      padding: 9px 12px 0;
+      gap: 6px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding: 12px 18px 0;
+      gap: 8px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: var(--text-small);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    overflow: hidden;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      font-size: var(--text-normal);
+    }
+  }
+
+  &__type {
+    font-size: var(--text-smaller);
+    color: var(--color-shadow-dark);
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      font-size: var(--text-small-extra);
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-small);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 6px;
+    margin-top: 14px;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      gap: 12px;
+      padding: 0 12px 8px;
+      margin-top: 17px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      gap: 16px;
+      padding: 0 18px 14px;
+      margin-top: 20px;
+    }
+  }
+
+  &__info {
+    overflow: hidden;
+  }
+
+  &__cost {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px 8px;
+  }
+
+  &__price {
+    @extend %SONGER700;
+    font-size: var(--text-medium);
+    line-height: 1.1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      font-size: var(--text-large);
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-larger);
+    }
+
+    &:not(:first-child),
+    &:not(:last-child) {
+      color: var(--color-warning);
+    }
+  }
+
+  &__sale {
+    font-weight: 500;
+    color: var(--color-label);
+    font-size: var(--text-smaller);
+    line-height: 1.1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      font-size: var(--text-small);
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-normal);
+    }
+  }
+
+  &__tags {
+    position: fixed;
+    top: 6px;
+    left: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    max-width: 70%;
+    font-size: var(--text-smaller);
+    color: var(--color-neutral);
+    pointer-events: none;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      top: 10px;
+      left: 10px;
+      font-size: var(--text-small);
+    }
+  }
+
+  &__tag {
+    padding: 1px 4px;
+    @extend %SONGER400;
+    line-height: 1;
+    border-radius: 100px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      font-weight: 400;
+    }
+
+    &_event {
+      background-color: var(--color-warning);
+    }
+
+    &_status {
+      background-color: var(--color-notify);
+    }
+
+    &_type {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__action {
+    flex-shrink: 0;
+    align-self: flex-end;
+  }
+
+  &__favourites {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2em;
+    height: 2em;
+    font-size: var(--text-medium);
+    color: var(--color-main);
+    background-color: transparent;
+    border: none;
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      opacity: 1;
+    }
+
+    @media (any-hover: hover) {
+      opacity: 0;
+
+      &:not(:active):hover {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+    }
+
+    .favorites & {
+      opacity: 1;
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      font-size: var(--text-large);
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-larger);
+    }
+  }
+
+  &__quantity {
+    position: relative;
+    z-index: 2;
+    width: var(--width-quantity-small);
+    height: var(--width-quantity-small);
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+    overflow: hidden;
+
+    &.added {
+      width: calc(3.2 * var(--width-quantity-small));
+    }
+  }
+
+  &__buy {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--width-quantity-small);
+    height: var(--width-quantity-small);
+    margin-left: auto;
+    font-size: calc(0.5 * var(--width-quantity-small));
+    color: var(--color-neutral);
+    background-color: var(--color-main);
+    border: none;
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-main-light);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-main-light);
+      }
+    }
+
+    &:active {
+    }
+
+    .added & {
+      display: none;
+    }
+  }
+}

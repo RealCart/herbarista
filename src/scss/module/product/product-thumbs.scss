@@ -1,0 +1,142 @@
+.product-thumbs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  &__items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    will-change: transform;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 100%;
+    margin-bottom: var(--gap-small);
+
+    ._is-init & {
+      margin-bottom: 0;
+    }
+
+    &_visible {
+    }
+
+    &_shown {
+    }
+
+    &_active {
+    }
+
+    &_prev {
+    }
+
+    &_next {
+    }
+  }
+
+  &__actions {
+    display: none;
+
+    ._is-init & {
+      display: block;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    right: -1px;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 114/40;
+    color: var(--color-main);
+    background-color: var(--color-neutral);
+    border: none;
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+
+      &::after {
+        background-color: var(--color-shadow-light);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        &::after {
+          background-color: var(--color-shadow-light);
+        }
+      }
+    }
+
+    &:active {
+    }
+
+    &::before {
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 1px;
+      left: 1px;
+      background-color: var(--color-neutral);
+      border-radius: var(--radius-smallest);
+      @extend %transition;
+    }
+
+    &_prev {
+      top: -1px;
+      padding-bottom: var(--gap-small);
+
+      &::before {
+        transform: scaleY(-1);
+      }
+
+      &::after {
+        top: 1px;
+        bottom: var(--gap-small);
+      }
+    }
+
+    &_next {
+      bottom: -1px;
+      padding-top: var(--gap-small);
+
+      &::after {
+        top: var(--gap-small);
+        bottom: 1px;
+      }
+    }
+
+    &_disabled {
+      display: none;
+      cursor: default;
+    }
+
+    &._is-lock {
+    }
+  }
+
+  &__pagination {
+    &._is-lock {
+    }
+  }
+
+  &__bullet {
+    &_active {
+    }
+  }
+
+  &__img {
+  }
+}

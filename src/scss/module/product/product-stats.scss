@@ -1,0 +1,45 @@
+.product-stats {
+  &__item {
+    & + & {
+      margin-top: 4px;
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        margin-top: var(--gap-small);
+      }
+
+      @media (min-width: ($md1+px)) {
+        // от контейнера
+        margin-top: var(--gap-normal);
+      }
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    color: var(--color-shadow-dark);
+  }
+
+  &__desc {
+    display: inline;
+
+    a {
+      color: var(--color-accent);
+      @extend %transition;
+
+      &:focus-visible {
+        outline: none;
+        color: var(--color-accent-light);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          color: var(--color-accent-light);
+        }
+      }
+
+      &:active {
+      }
+    }
+  }
+}

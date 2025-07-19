@@ -1,0 +1,59 @@
+.range {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px 0;
+  border: 1px solid var(--color-shadow);
+  border-radius: var(--radius-small);
+
+  @media (min-width: ($md2+px)) {
+    // от 1024px
+    border: none;
+  }
+
+  .filter-choice__dropdown & {
+    @media (max-width: ($md2+px)) {
+      // до 1024px
+      margin-bottom: 24px;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__input {
+    min-width: 0;
+    font-weight: 500;
+    border: none;
+    outline: none;
+
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &_min {
+    }
+
+    &_max {
+      text-align: right;
+    }
+  }
+
+  &__main {
+    margin: -2px 0 -1px;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      margin: 0 0 -1px;
+    }
+  }
+
+  &__body {
+  }
+}

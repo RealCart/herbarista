@@ -1,0 +1,120 @@
+.extra-slider {
+  position: relative;
+  --width-progress: 0;
+  width: 100%;
+
+  @media (min-width: ($md2+px)) {
+    // от 1024px
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    width: 100%;
+    will-change: transform;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      height: 100%;
+    }
+  }
+
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    width: 158px;
+    margin-right: var(--gap-small);
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      width: calc((100% - 2 * var(--gap-small)) / 3);
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      width: calc((100% - 3 * var(--gap-small)) / 4);
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      width: 100%;
+    }
+
+    ._is-init & {
+      margin-right: 0;
+    }
+  }
+
+  &__actions {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+    }
+  }
+
+  &__btn {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      display: none;
+    }
+
+    &_prev {
+    }
+
+    &_next {
+    }
+  }
+
+  &__pagination {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      flex-grow: 1;
+      gap: 4px;
+    }
+  }
+
+  &__bullet {
+    [data-slider-pagination] > & {
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        flex: 1 1 auto;
+        width: auto;
+        height: 2px;
+        background-color: var(--color-neutral);
+        border-radius: 100px;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background-color: var(--color-main);
+        }
+
+        &::after {
+          display: none;
+        }
+
+        &_active {
+          &::before {
+            width: calc(100% * var(--width-progress));
+          }
+
+          & ~ .extra-slider__bullet {
+            &::before {
+              width: 0%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

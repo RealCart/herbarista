@@ -1,0 +1,278 @@
+.search {
+  --height-search-input: 66px;
+  --height-search-submit: 30px;
+
+  @media (min-width: ($md4+px)) {
+    // от 576рх
+    --padding-page: 0px;
+  }
+
+  @media (min-width: ($md2+px)) {
+    // от 1024px
+    --height-search-input: var(--height-btn-normal);
+    --height-search-submit: 38px;
+    width: 100%;
+  }
+
+  &:not(._is-fill) {
+    .search__btn_reset {
+      display: none;
+    }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-main);
+    font-size: var(--text-large);
+    border: none;
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &_close {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 34px;
+      height: var(--height-search-input);
+      font-size: var(--text-medium);
+      background-color: transparent;
+
+      &:focus-visible {
+        color: var(--color-main-light);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          color: var(--color-main-light);
+        }
+      }
+
+      &:active {
+      }
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        display: none;
+      }
+    }
+
+    &_reset {
+      width: 30px;
+      height: 30px;
+      background-color: var(--color-shadow-light);
+
+      &:focus-visible {
+        background-color: var(--color-shadow);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          background-color: var(--color-shadow);
+        }
+      }
+
+      &:active {
+      }
+
+      @media (max-width: ($md2+px)) {
+        // до 1024px
+        position: absolute;
+        top: calc(0.5 * var(--height-search-input));
+        right: calc(var(--height-search-submit) + var(--padding-page) + var(--gap-normal));
+        transform: translateY(-50%);
+      }
+    }
+
+    &_submit {
+      position: absolute;
+      top: calc(0.5 * var(--height-search-input));
+      right: var(--padding-page);
+      transform: translateY(-50%);
+      width: var(--height-search-submit);
+      height: var(--height-search-submit);
+      color: var(--color-neutral);
+      background-color: var(--color-accent);
+
+      &:focus-visible {
+        background-color: var(--color-accent-light);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          background-color: var(--color-accent-light);
+        }
+      }
+
+      &:active {
+      }
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        right: calc(0.5 * (var(--height-search-input) - var(--height-search-submit)));
+      }
+    }
+  }
+
+  &__dropdown {
+    @extend %scrollbar;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      overflow: visible;
+    }
+
+    @media (max-width: ($md2+px)) {
+      // до 1024px
+      position: fixed;
+      top: var(--height-header);
+      right: 0;
+      left: 0;
+      max-height: calc(var(--height-page) - var(--height-header) - var(--height-userbar));
+      background-color: var(--color-neutral);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+
+      ._is-search-open & {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    }
+
+    @media (max-width: ($md3+px)) {
+      // до 767рх
+      height: var(--height-page);
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: var(--width-container);
+    margin: 0 auto;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      max-width: 358px;
+      margin: 0;
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      max-width: 618px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      max-width: 758px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form,
+  &__main {
+    @media (max-width: ($md2+px)) {
+      // до 1024px
+      position: relative;
+      padding-bottom: 1px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: var(--width-page);
+        height: 1px;
+        background-color: var(--color-shadow);
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    max-width: 100%;
+    height: var(--height-search-input);
+    padding-right: 80px;
+    padding-left: 44px;
+    font-size: var(--text-normal);
+    color: var(--color-main);
+    background-color: transparent;
+    border: none;
+    @extend %transition;
+
+    &::placeholder {
+      color: var(--color-label);
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: var(--color-shadow-dark);
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        border-color: var(--color-shadow-dark);
+      }
+    }
+
+    &:active {
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      padding-right: 200px;
+      padding-left: 18px;
+      background-color: var(--color-shadow-lightest);
+      border: 1px solid transparent;
+      border-radius: var(--radius-smallest);
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding-left: 24px;
+    }
+  }
+
+  &__action {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      position: absolute;
+      top: calc(0.5 * var(--height-search-input));
+      right: calc(var(--height-search-submit) + var(--padding-page) + 2 * var(--gap-normal));
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: var(--gap-normal);
+    }
+  }
+
+  &__result {
+    display: none;
+
+    ._is-fill & {
+      display: block;
+    }
+  }
+}

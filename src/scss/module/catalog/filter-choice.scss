@@ -1,0 +1,108 @@
+.filter-choice {
+  position: relative;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: var(--text-medium);
+    line-height: 1;
+    padding: 24px 0;
+    @extend %transition;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      min-height: var(--height-btn-small-extra);
+      padding: 0 15px;
+      font-size: var(--text-normal);
+      background-color: var(--color-shadow-lightest);
+      border: 1px solid var(--color-shadow);
+      border-radius: var(--radius-smallest);
+
+      &:focus-visible {
+        outline: none;
+        background-color: var(--color-shadow);
+      }
+
+      @media (any-hover: hover) {
+        &:not(:active):hover {
+          background-color: var(--color-shadow);
+        }
+      }
+
+      &:active {
+      }
+    }
+
+    @media (max-width: ($md2+px)) {
+      // до 1024px
+      font-family: SONGER, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+    }
+
+    &::before {
+      order: 1;
+      padding-top: 0.25em;
+      padding-left: var(--gap-normal-extra);
+      margin-left: auto;
+      font-size: var(--text-small);
+    }
+
+    & > * {
+      pointer-events: none;
+    }
+
+    &._spoller-active {
+      &::before {
+        padding-top: 0;
+        transform: scaleY(-1);
+      }
+    }
+  }
+
+  &__dropdown {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      position: absolute;
+      z-index: 1;
+      top: calc(100% + var(--gap-normal));
+      left: var(--position-left, 0);
+      width: max-content;
+      max-width: 300px;
+      background-color: var(--color-neutral);
+      border-radius: var(--radius-small);
+      box-shadow: 0 5px 30px 0 rgba(142, 142, 142, 0.14);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding-right: 6px;
+    max-height: 364px;
+  }
+
+  &__scroll {
+    width: 100%;
+    padding-bottom: 24px;
+    @extend %scrollbar;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      padding-bottom: 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 24px;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      gap: 18px;
+      padding: 20px 24px 20px 20px;
+    }
+  }
+}

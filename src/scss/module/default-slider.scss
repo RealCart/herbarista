@@ -1,0 +1,142 @@
+.default-slider {
+  width: 100%;
+
+  @media (min-width: ($md3+px)) {
+    // от 767рх
+    overflow: hidden;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    width: 100%;
+    will-change: transform;
+
+    & > * {
+      .sale & {
+        width: 319px;
+
+        @media (min-width: ($md3+px)) {
+          // от 767рх
+          width: calc(50% - 0.5 * var(--gap-small));
+        }
+
+        @media (min-width: ($md1+px)) {
+          // от контейнера
+          width: calc(50% - 0.5 * var(--gap-normal));
+        }
+      }
+
+      .blog-slider & {
+        width: 315px;
+
+        @media (min-width: ($md3+px)) {
+          // от 767рх
+          width: calc((100% - 2 * var(--gap-small)) / 3);
+        }
+
+        @media (min-width: ($md11+px)) {
+          // от доп1
+          width: calc((100% - 3 * var(--gap-small)) / 4);
+        }
+
+        @media (min-width: ($md1+px)) {
+          // от контейнера
+          width: calc((100% - 3 * var(--gap-normal)) / 4);
+        }
+      }
+
+      .related & {
+        width: calc((100% - var(--gap-small)) / 2);
+
+        @media (min-width: ($md4+px)) {
+          // от 576рх
+          width: calc((100% - 2 * var(--gap-small)) / 3);
+        }
+
+        @media (min-width: ($md2+px)) {
+          // от 1024px
+          width: calc((100% - 3 * var(--gap-small)) / 4);
+        }
+
+        @media (min-width: ($md1+px)) {
+          // от контейнера
+          width: calc((100% - 4 * var(--gap-normal)) / 5);
+        }
+      }
+
+      .product-specs & {
+        width: 152px;
+
+        @media (min-width: ($md4+px)) {
+          // от 576рх
+          width: calc((100% - var(--gap-small)) / 2);
+        }
+
+        @media (min-width: ($md2+px)) {
+          // от 1024px
+          width: calc((100% - 3 * var(--gap-small)) / 3);
+        }
+      }
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    margin-right: var(--gap-small);
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      margin-right: var(--gap-normal);
+    }
+
+    ._is-init & {
+      margin-right: 0;
+    }
+
+    &_visible {
+    }
+
+    &_shown {
+    }
+
+    &_active {
+    }
+
+    &_prev {
+    }
+
+    &_next {
+    }
+  }
+
+  &__actions {
+  }
+
+  &__btn {
+    &::after {
+    }
+
+    &_prev {
+    }
+
+    &_next {
+    }
+
+    &_disabled {
+    }
+
+    &._is-lock {
+    }
+  }
+
+  &__pagination {
+    &._is-lock {
+    }
+  }
+
+  &__bullet {
+    &_active {
+    }
+  }
+}

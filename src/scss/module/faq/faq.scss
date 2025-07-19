@@ -1,0 +1,116 @@
+.faq {
+  .container {
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      max-width: calc(0.75 * var(--width-container) + 2 * var(--padding-page));
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      max-width: calc(0.6 * var(--width-container) + 2 * var(--padding-page));
+    }
+  }
+
+  &__body {
+  }
+
+  &__items {
+    display: grid;
+    @extend %gridfix;
+    gap: var(--gap-small);
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      gap: var(--gap-normal);
+    }
+  }
+
+  &__item {
+    background-color: var(--color-shadow-lightest);
+    border-radius: var(--radius-smallest);
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    @extend %SONGER700;
+    color: var(--color-main);
+    font-size: var(--text-medium);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      color: var(--color-main-light);
+
+      &::before {
+        color: var(--color-accent);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        color: var(--color-main-light);
+
+        &::before {
+          color: var(--color-accent);
+        }
+      }
+    }
+
+    &:active {
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      padding: 18px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding: 24px;
+    }
+
+    &::before {
+      order: 1;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin-left: var(--gap-normal);
+      @extend %transition;
+    }
+
+    &._spoller-active {
+      &::before {
+        transform: scaleY(-1);
+      }
+    }
+  }
+
+  &__inner {
+  }
+
+  &__content {
+    padding: 10px 14px 14px;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      padding: 6px 18px 18px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      padding: 0 24px 24px;
+    }
+  }
+
+  &__tag {
+    margin-top: 24px;
+    line-height: 1.1;
+    color: var(--color-shadow-dark);
+  }
+}

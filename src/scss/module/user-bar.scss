@@ -1,0 +1,145 @@
+.user-bar {
+  position: fixed;
+  z-index: 9;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-neutral);
+  border-top: 1px solid var(--color-shadow);
+
+  @media (min-width: ($md2+px)) {
+    // от 1024px
+    position: static;
+    padding-right: 0 !important;
+    margin-left: auto;
+    background-color: transparent;
+    border-top: none;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--width-container);
+    padding: 12px 0 14px;
+    margin: 0 auto;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      gap: 12px;
+      max-width: none;
+      padding: 0;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 23%;
+    max-width: 120px;
+
+    &:nth-child(n + 5) {
+      display: none;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      width: 75px;
+
+      &_mob {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+    text-align: center;
+    color: var(--color-main);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      color: var(--color-accent);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        color: var(--color-accent);
+      }
+    }
+
+    &:active {
+    }
+
+    &::before {
+      font-size: 24px;
+
+      @media (min-width: ($md1+px)) {
+        // от контейнера
+        font-size: 26px;
+      }
+    }
+  }
+
+  &__name {
+    max-width: 75px;
+    height: 1.3em;
+    margin-top: 6px;
+    text-align: center;
+    font-weight: 500;
+    font-size: var(--text-smaller);
+    color: var(--color-shadow-dark);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition-duration: var(--transition-duration);
+    transition-property: color, background-color, border-color, opacity, transform, height, margin;
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-small);
+    }
+
+    ._is-scroll & {
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        margin-top: 4px;
+        height: 0;
+      }
+    }
+  }
+
+  &__info {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 3px;
+    margin-left: 5px;
+    font-weight: 500;
+    font-size: var(--text-smaller);
+    line-height: 1;
+    color: var(--color-neutral);
+    background-color: var(--color-warning);
+    border-radius: 100px;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      top: 0;
+      margin-left: 14px;
+    }
+  }
+}

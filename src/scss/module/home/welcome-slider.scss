@@ -1,0 +1,242 @@
+.welcome-slider {
+  --transition-duration: 1s;
+  --transform-percent: -5%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &._is-lock,
+  &:not(&._is-init) {
+    --transform-percent: 0%;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 100%;
+    opacity: 1 !important;
+    overflow: hidden;
+
+    &_visible {
+    }
+
+    &_shown {
+    }
+
+    &_prev {
+      z-index: 1;
+
+      .welcome-slider__mask {
+        // width: 0;
+      }
+    }
+
+    &_active {
+      --transform-percent: 0%;
+      z-index: 2;
+
+      .welcome-slider__mask {
+        @extend %transition;
+      }
+    }
+
+    &_next {
+      .welcome-slider__mask {
+        width: 0px;
+      }
+    }
+  }
+
+  &__actions {
+    position: absolute;
+    z-index: 2;
+    right: 12px;
+    bottom: 12px;
+    display: flex;
+    gap: var(--gap-normal);
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      right: 18px;
+      bottom: 18px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      right: 30px;
+      bottom: 30px;
+    }
+
+    ._is-lock & {
+      display: none;
+    }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: var(--text-normal);
+    color: var(--color-neutral);
+    background-color: var(--color-main);
+    border: none;
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-main-light);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-main-light);
+      }
+    }
+
+    &:active {
+    }
+    &_prev {
+    }
+
+    &_next {
+    }
+
+    &_disabled {
+    }
+
+    &._is-lock {
+    }
+  }
+
+  &__mask {
+    width: 0;
+    width: var(--width-welcome-slider);
+    height: 100%;
+    overflow: hidden;
+
+    ._is-lock & {
+      width: var(--width-welcome-slider);
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: var(--width-welcome-slider);
+    height: 340px;
+    padding: 27px 12px 12px;
+
+    @media (min-width: ($md4+px)) {
+      // от 576рх
+      padding: 30px 18px 18px;
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      height: 390px;
+    }
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      height: 430px;
+    }
+
+    @media (min-width: ($md11+px)) {
+      // от доп1
+      height: 460px;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      height: 550px;
+      padding: 42px 30px 30px;
+    }
+  }
+
+  &__media {
+    position: absolute;
+    transform: translateX(var(--transform-percent));
+    top: 0;
+    right: -10%;
+    bottom: 0;
+    left: -10%;
+    @extend %transition;
+  }
+
+  &__img,
+  &__video {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__content {
+    flex-grow: 1;
+    position: relative;
+    transform: translateX(var(--transform-percent));
+    max-width: 330px;
+    color: var(--color-neutral);
+    @extend %transition;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      padding-bottom: 5%;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      max-width: 500px;
+    }
+  }
+
+  &__title {
+    text-wrap: balance;
+    line-height: 0.9;
+
+    &:not(:last-child) {
+      margin-bottom: var(--gap-normal);
+    }
+  }
+
+  &__text {
+    max-width: 280px;
+    text-wrap: balance;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      margin: auto 0;
+    }
+
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      max-width: 320px;
+      font-size: var(--text-medium);
+    }
+  }
+
+  &__link {
+    --transition-duration: 0.3s;
+    position: relative;
+    margin-top: 22px;
+  }
+}

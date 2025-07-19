@@ -1,0 +1,97 @@
+$minWidth: 360;
+$maxWidth: 1920;
+$pageSpacer: 6;
+$maxWidthContainer: 1599.98;
+$mdMax: 3840.98;
+$md0: 1920.98;
+$md1: $maxWidthContainer;
+$md11: 1279.98;
+$md2: 1023.98;
+$md3: 767.98;
+$md4: 575.98;
+$md5: 479.98;
+$md6: 359.98;
+
+%scrollbar {
+  transform: translate3d(0, 0, 0);
+  overflow: hidden auto;
+  overflow: clip auto;
+
+  @media (any-hover: hover) {
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 6px 0;
+    background-color: var(--color-shadow);
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-main);
+    border-radius: 2px;
+  }
+
+  @-moz-document url-prefix() {
+    scrollbar-color: var(--color-main) var(--color-shadow);
+    scrollbar-width: thin;
+  }
+}
+
+%scroll-full-width {
+  max-width: var(--width-page);
+  padding-right: var(--padding-page);
+  padding-left: var(--padding-page);
+  margin-right: calc(-1 * var(--padding-page));
+  margin-left: calc(-1 * var(--padding-page));
+  overflow: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+%anim-end {
+  animation-fill-mode: forwards;
+}
+
+%hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+%pp {
+  &::before {
+    content: "";
+    display: block;
+    height: 1em;
+  }
+}
+
+%transition {
+  transition-duration: var(--transition-duration);
+  transition-property: color, background-color, border-color, opacity, transform, width;
+}
+
+%square {
+  aspect-ratio: 1/1;
+  height: auto;
+}
+
+%gridfix {
+  & > * {
+    min-width: 0;
+  }
+}

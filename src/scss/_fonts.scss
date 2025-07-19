@@ -1,0 +1,103 @@
+@font-face {
+  font-family: Denistina;
+  font-display: swap;
+  src: url("../fonts/Denistina.woff2") format("woff2"), url("../fonts/Denistina.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+%Denistina400 {
+  font-family: Denistina, sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+@font-face {
+  font-family: Involve;
+  font-display: swap;
+  src: url("../fonts/Involve-Regular.woff2") format("woff2"),
+    url("../fonts/Involve-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+%Involve400 {
+  font-family: Involve, sans-serif;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Involve;
+  font-display: swap;
+  src: url("../fonts/Involve-Medium.woff2") format("woff2"),
+    url("../fonts/Involve-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+%Involve500 {
+  font-family: Involve, sans-serif;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Involve;
+  font-display: swap;
+  src: url("../fonts/Involve-Bold.woff2") format("woff2"),
+    url("../fonts/Involve-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+%Involve700 {
+  font-family: Involve, sans-serif;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: SONGER;
+  font-display: swap;
+  src: url("../fonts/SONGER-Regular.woff2") format("woff2"),
+    url("../fonts/SONGER-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+%SONGER400 {
+  font-family: SONGER, sans-serif;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: SONGER;
+  font-display: swap;
+  src: url("../fonts/SONGER-Medium.woff2") format("woff2"),
+    url("../fonts/SONGER-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+%SONGER500 {
+  font-family: SONGER, sans-serif;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: SONGER;
+  font-display: swap;
+  src: url("../fonts/SONGER-Bold.woff2") format("woff2"), url("../fonts/SONGER-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+%SONGER700 {
+  font-family: SONGER, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+@font-face {
+  font-family: icons;
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+%icons400 {
+  font-family: icons, sans-serif;
+  font-weight: 400;
+}

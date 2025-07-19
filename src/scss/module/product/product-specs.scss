@@ -1,0 +1,90 @@
+.product-specs {
+  @media (min-width: ($md3+px)) {
+    // от 767рх
+    display: grid;
+    align-items: start;
+    grid-template-columns: 280px 1fr;
+    gap: var(--gap-product);
+  }
+
+  &__head {
+    margin-bottom: var(--gap-product);
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      position: sticky;
+      top: calc(var(--height-header) - var(--height-header-scroll-scale) + 2 * var(--gap-normal));
+      margin-bottom: 0;
+      transition-duration: var(--transition-duration);
+      transition-property: top;
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--gap-product);
+
+    @media (min-width: ($md3+px)) {
+      // от 767рх
+      margin-top: calc(-0.11 * var(--gap-product));
+      margin-bottom: calc(0.84 * var(--gap-product));
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-small);
+  }
+
+  &__anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    text-align: center;
+    font-size: var(--text-normal);
+    line-height: 1.1;
+    color: var(--color-main);
+    background-color: var(--color-shadow-lightest);
+    border-radius: var(--radius-smallest);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-shadow);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-shadow);
+      }
+    }
+
+    &:active {
+    }
+  }
+
+  &__body {
+    display: grid;
+    @extend %gridfix;
+    gap: var(--gap-product);
+  }
+
+  &__box {
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    @extend %SONGER700;
+    line-height: 1;
+    font-size: var(--text-medium);
+    color: var(--color-main-light);
+  }
+
+  &__content {
+    @media (min-width: ($md1+px)) {
+      // от контейнера
+      font-size: var(--text-normal);
+    }
+  }
+}

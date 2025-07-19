@@ -1,0 +1,148 @@
+.user-bonus {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--padding-card);
+  background-color: var(--color-shadow-lightest);
+
+  &__desc {
+    padding-right: var(--height-btn-normal);
+    margin-bottom: var(--gap-normal);
+    color: var(--color-shadow-dark);
+  }
+
+  &__num {
+    margin-top: auto;
+    @extend %SONGER700;
+    font-size: 30px;
+  }
+
+  &__link {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: var(--color-main);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+
+      &::before {
+        background-color: var(--color-shadow);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        &::before {
+          background-color: var(--color-shadow);
+        }
+      }
+    }
+
+    &:active {
+    }
+
+    &::before {
+      position: absolute;
+      right: var(--padding-card);
+      top: var(--padding-card);
+      width: var(--height-btn-small);
+      font-size: var(--text-medium);
+      @extend %square;
+      @extend .btn;
+      @extend .btn_small;
+      @extend .btn_icon;
+      @extend .btn_neutral;
+    }
+  }
+}
+
+.cabinet-nav {
+  display: grid;
+  @extend %gridfix;
+  gap: var(--gap-small);
+  min-height: 100%;
+
+  @media (min-width: ($md3+px)) {
+    // от 767рх
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  &__item {
+    position: relative;
+    background-color: var(--color-shadow-lightest);
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    min-height: var(--height-lc-card);
+    padding: var(--padding-card);
+    color: var(--color-main);
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+
+      &::before {
+        background-color: var(--color-shadow);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        &::before {
+          background-color: var(--color-shadow);
+        }
+      }
+    }
+
+    &:active {
+    }
+
+    &::before {
+      position: absolute;
+      right: var(--padding-card);
+      top: var(--padding-card);
+      width: var(--height-btn-small);
+      font-size: var(--text-medium);
+      @extend %square;
+      @extend .btn;
+      @extend .btn_small;
+      @extend .btn_icon;
+      @extend .btn_neutral;
+
+      @media (min-width: ($md3+px)) {
+        // от 767рх
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: var(--height-btn-normal);
+    @extend %SONGER500;
+    font-size: var(--text-medium);
+
+    &:not(:last-child) {
+      margin-bottom: var(--padding-card);
+    }
+
+    &::before {
+      margin-bottom: var(--gap-normal-extra);
+      font-size: var(--text-large);
+    }
+  }
+
+  &__desc {
+    color: var(--color-shadow-dark);
+  }
+}

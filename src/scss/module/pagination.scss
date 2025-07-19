@@ -1,0 +1,123 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+
+    a,
+    span {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      user-select: none;
+      font-size: 12px;
+      color: var(--color-main);
+      background-color: var(--color-accent);
+      @extend %transition;
+
+      @media (max-width: ($md3+px)) {
+        // до 767рх
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    & + & {
+      margin-left: 6px;
+
+      @media (max-width: ($md3+px)) {
+        // до 767рх
+        margin-left: 2px;
+      }
+    }
+
+    &_active {
+      a,
+      span {
+        color: var(--color-neutral);
+        background-color: var(--color-main);
+      }
+    }
+
+    &_prev,
+    &_next {
+      a::after,
+      span::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        border-style: solid;
+        border-color: var(--color-main);
+        border-radius: 1px;
+        @extend %transition;
+      }
+    }
+
+    &_prev {
+      a::after,
+      span::after {
+        transform: translate(-25%, -50%) rotate(45deg);
+        border-width: 0 0 2px 2px;
+      }
+    }
+
+    &_next {
+      a::after,
+      span::after {
+        transform: translate(-75%, -50%) rotate(-45deg);
+        border-width: 0 2px 2px 0;
+      }
+    }
+
+    &_disabled {
+      a::after,
+      span::after {
+        border-color: var(--color-shadow);
+      }
+    }
+
+    &:not(&_active):not(&_disabled) a:focus-visible {
+      outline: none;
+      color: var(--color-neutral);
+      background-color: var(--color-accent);
+
+      &::after {
+        border-color: var(--color-neutral);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:not(&_active):not(&_disabled) a:not(:active):hover {
+        color: var(--color-neutral);
+        background-color: var(--color-accent);
+
+        &::after {
+          border-color: var(--color-neutral);
+        }
+      }
+    }
+
+    &:not(&_active):not(&_disabled) a:active {
+      color: var(--color-neutral);
+      background-color: var(--color-main);
+
+      &::after {
+        border-color: var(--color-neutral);
+      }
+    }
+  }
+}

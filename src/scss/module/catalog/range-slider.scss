@@ -1,0 +1,74 @@
+.noUi {
+  &-target {
+    background-color: var(--color-label);
+    border-radius: 2px;
+  }
+
+  &-horizontal {
+    height: 3px;
+
+    @media (min-width: ($md2+px)) {
+      // от 1024px
+      height: 1px;
+    }
+  }
+
+  &-base {
+  }
+
+  &-connects {
+  }
+
+  &-connect {
+    background-color: var(--color-main);
+  }
+
+  &-origin {
+  }
+
+  &-handle {
+    width: 17px;
+    height: 17px;
+    background-color: var(--color-main);
+    border-radius: 50%;
+    cursor: grab;
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-main-light);
+    }
+
+    @media (any-hover: hover) {
+      &:not(:active):hover {
+        background-color: var(--color-main-light);
+      }
+    }
+
+    &:active {
+    }
+
+    .noUi-horizontal & {
+      top: -7px;
+      right: -9px;
+
+      @media (min-width: ($md2+px)) {
+        // от 1024px
+        top: -8px;
+      }
+    }
+
+    &-lower {
+    }
+
+    &-upper {
+    }
+
+    &.noUi-active {
+      cursor: grabbing;
+    }
+  }
+
+  &-touch-area {
+  }
+}

@@ -1,0 +1,98 @@
+.product-preview {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &__items {
+    position: relative;
+    display: flex;
+    width: 100%;
+    will-change: transform;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 100%;
+    background-color: var(--color-shadow-lightest);
+
+    ._is-init & {
+      margin-right: 0;
+    }
+
+    &_visible {
+    }
+
+    &_shown {
+    }
+
+    &_active {
+    }
+
+    &_prev {
+    }
+
+    &_next {
+    }
+  }
+
+  &__actions {
+    position: absolute;
+    right: 8px;
+    bottom: 6px;
+    left: 8px;
+
+    @media (min-width: ($md5+px)) {
+      // от 480рх
+      display: none;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &._is-lock {
+    }
+  }
+
+  &__bullet {
+    position: relative;
+    flex: 1 1 auto;
+    width: auto;
+    height: 3px;
+    color: var(--color-main);
+    background-color: var(--color-secondary);
+    border-radius: 100px;
+    overflow: hidden;
+    border: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-main-light);
+      opacity: 0;
+    }
+
+    &_active {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__img {
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    object-position: center;
+  }
+}

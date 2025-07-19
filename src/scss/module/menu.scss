@@ -1,0 +1,96 @@
+.menu {
+  --padding-page: 12px;
+
+  @media (min-width: ($md4+px)) {
+    // от 576рх
+    --padding-page: calc(6px + 0.5 * (var(--width-page) - var(--width-container)));
+  }
+
+  @media (min-width: ($md2+px)) {
+    // от 992px
+    display: none;
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 1;
+
+    ._is-menu-open & {
+      &::before {
+        content: "\e907";
+        transform: scale(1.25);
+      }
+    }
+  }
+
+  &__dropdown {
+    @extend %scrollbar;
+    position: fixed;
+    z-index: -5;
+    top: var(--height-header);
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: var(--height-page);
+    max-height: calc(var(--height-page) - var(--height-header) - var(--height-userbar));
+    background-color: var(--color-neutral);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    ._is-menu-open & {
+      z-index: 9;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  &__body {
+    position: relative;
+    max-width: 100%;
+    padding: 0 var(--padding-page);
+
+    ._is-assortment-open & {
+      height: 100%;
+      overflow: hidden;
+      overflow: clip;
+    }
+  }
+
+  &__box {
+    &_catalog {
+      & + .menu__box_nav {
+        padding-bottom: 16px;
+        margin-top: 10px;
+
+        &:not(:last-child) {
+          position: relative;
+          padding-bottom: 17px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--width-page);
+            height: 1px;
+            background-color: var(--color-shadow);
+          }
+        }
+      }
+
+      &:first-child {
+        padding-top: 16px;
+      }
+    }
+
+    &_nav {
+    }
+
+    &_extra {
+    }
+  }
+}
