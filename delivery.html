@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="icon" href="./img/content/favicon.svg" />
+    <title>Доставка</title>
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <script src="./js/script.min.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="header " data-lp>
+        <div class="header__top">
+          <div class="container">
+            <div class="header__top-body">
+              <nav class="header-nav" data-da=".menu__box_nav,1023,first">
+                <ul class="header-nav__list">
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./about.html">О компании</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./delivery.html">Доставка</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./faq.html">Вопросы и ответы</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./blog.html">Блог</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./contacts.html">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+              <ul class="header-extra" data-da=".menu__box_extra,1023,first">
+                <li class="header-extra__item">
+                  <button
+                    class="header-extra__link header-extra__link_geo icon-arr-down"
+                    type="button"
+                    data-popup="#geo"
+                  >
+                    <span class="header-extra__label">Ваш город</span>
+                    <span class="header-extra__text">Москва</span>
+                  </button>
+                </li>
+                <li class="header-extra__item">
+                  <button
+                    class="header-extra__link header-extra__link_contacts icon-arr-down"
+                    type="button"
+                    data-header-extra
+                  >
+                    <span class="header-extra__text">8 800 444 80 04</span>
+                  </button>
+                  <div class="header-extra__dropdown">
+                    <div class="header-extra__content">
+                      <div class="header-extra__box header-extra__box_call">
+                        <dl class="extra-list">
+                          <div class="extra-list__item extra-list__item_inverse">
+                            <dt class="extra-list__name">Дирекция по оптовым продажам</dt>
+                            <dd class="extra-list__desc"><a href="tel:88004448004">8 800 444 80 04</a></dd>
+                          </div>
+                          <div class="extra-list__item extra-list__item_inverse">
+                            <dt class="extra-list__name">Дирекция по оптовым продажам</dt>
+                            <dd class="extra-list__desc"><a href="tel:+74956096333">+7 495 60 96 333</a></dd>
+                          </div>
+                          <div class="extra-list__item extra-list__item_inverse">
+                            <dt class="extra-list__name">Для розничных покупателей</dt>
+                            <dd class="extra-list__desc"><a href="tel:+74957755000">+7 495 77 55 000</a></dd>
+                          </div>
+                        </dl>
+                        <button
+                          class="header-extra__btn btn btn_normal btn_main"
+                          type="button"
+                          data-popup="#callback"
+                        >
+                          Обратный звонок
+                        </button>
+                      </div>
+                      <div class="header-extra__box header-extra__box_contacts">
+                        <dl class="extra-list">
+                          <div class="extra-list__item">
+                            <dt class="extra-list__name">Адрес</dt>
+                            <dd class="extra-list__desc">
+                              127015, Москва, Бумажный пр-д., д. 14, стр. 2
+                            </dd>
+                          </div>
+                          <div class="extra-list__item">
+                            <dt class="extra-list__name">Адрес</dt>
+                            <dd class="extra-list__desc">
+                              <a href="mailto:info@nikamed.ru" target="_blank">info@nikamed.ru</a>
+                            </dd>
+                          </div>
+                          <div class="extra-list__item">
+                            <dt class="extra-list__name">Режим работы</dt>
+                            <dd class="extra-list__desc">ПН-ПТ 9:00 до 18:00</dd>
+                          </div>
+                          <div class="extra-list__item">
+                            <dt class="extra-list__name">Мы в соц. сетях</dt>
+                            <dd class="extra-list__desc">
+                              <ul class="social">
+                                <li class="social__item">
+                                  <a class="social__link" href="#">
+                                    <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M16.2611 20.9252C10.4357 20.9252 7.11305 16.8524 6.97461 10.0752H9.8926C9.98844 15.0495 12.1397 17.1565 13.8436 17.5909V10.0752H16.5912V14.3652C18.2738 14.1806 20.0417 12.2256 20.638 10.0752H23.3856C23.1609 11.1905 22.7129 12.2465 22.0698 13.1771C21.4266 14.1078 20.602 14.8931 19.6476 15.4839C20.7129 16.0237 21.6539 16.7879 22.4084 17.7258C23.1628 18.6637 23.7137 19.7542 24.0246 20.9252H21.0001C20.721 19.9081 20.1538 18.9976 19.3695 18.3079C18.5852 17.6181 17.6187 17.1798 16.5912 17.0479V20.9252H16.2611Z" fill="currentColor" />
+                                    </svg>
+                                  </a>
+                                </li>
+                                <li class="social__item">
+                                  <a class="social__link" href="#">
+                                    <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M16.9946 16.9946C15.7768 18.2513 15.6882 19.8179 15.583 23.25C18.7827 23.25 20.9914 23.2389 22.1318 22.1318C23.2389 20.9914 23.25 18.6775 23.25 15.583C19.8179 15.6937 18.2513 15.7768 16.9946 16.9946ZM7.75 15.583C7.75 18.6775 7.76107 20.9914 8.86821 22.1318C10.0086 23.2389 12.2173 23.25 15.417 23.25C15.3063 19.8179 15.2232 18.2513 14.0054 16.9946C12.7487 15.7768 11.1821 15.6882 7.75 15.583ZM15.417 7.75C12.2229 7.75 10.0086 7.76107 8.86821 8.86821C7.76107 10.0086 7.75 12.3225 7.75 15.417C11.1821 15.3063 12.7487 15.2232 14.0054 14.0054C15.2232 12.7487 15.3118 11.1821 15.417 7.75ZM16.9946 14.0054C15.7768 12.7487 15.6882 11.1821 15.583 7.75C18.7827 7.75 20.9914 7.76107 22.1318 8.86821C23.2389 10.0086 23.25 12.3225 23.25 15.417C19.8179 15.3063 18.2513 15.2232 16.9946 14.0054Z" fill="currentColor" />
+                                    </svg>
+                                  </a>
+                                </li>
+                              </ul>
+                            </dd>
+                          </div>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="header__main">
+          <div class="container">
+            <div class="header__body">
+              <a class="logo logo_header" href="./index.html#wrapper">
+                <img class="logo__img" src="./img/content/logo_dark.svg" alt="logo">
+              </a>
+              <div class="header__inner">
+                <button
+                  class="header-btn icon-call"
+                  type="button"
+                  title="Обратный звонок"
+                  data-popup="#callback"
+                >
+                  <span class="_seo">Обратный звонок</span>
+                </button>
+                <div class="assortment" data-da=".menu__box_catalog,1023,first">
+                  <button
+                    class="assortment__btn btn btn_normal btn_main icon-arr-right"
+                    type="button"
+                    data-assortment
+                  >
+                    Каталог
+                  </button>
+                  <div class="assortment__dropdown">
+                    <div class="assortment__body">
+                      <button class="assortment__title icon-arr-left" type="button" data-assortment>
+                        Каталог магазина
+                      </button>
+                      <div class="assortment__list" data-spollers data-one-spoller data-spollers-speed="0">
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>Продукты</summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Продукты
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Сиропы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Смеси, соки</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Какао</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Пюре</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Основы для напитков с разными вкусами</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Горячий шоколад</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Топпинги</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Кофе</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Безалкогольные напитки</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Кордиалы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Чай</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Украшения для коктейлей</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Джус-боллы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Соусы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Джус-боллы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Соусы</a>
+                                  </li>
+                                </ul>
+                                <ul class="assortment-brands">
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-3.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-3.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>
+                            Инвентарь бариста
+                          </summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Инвентарь бариста
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Сиропы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Смеси, соки</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Какао</a>
+                                  </li>
+                                </ul>
+                                <ul class="assortment-brands">
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-3.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-3.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-3.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-3.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-3.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-3.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>
+                            Инвентарь кухня
+                          </summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Инвентарь кухня
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Пюре</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Основы для напитков</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Горячий шоколад</a>
+                                  </li>
+                                </ul>
+                                <ul class="assortment-brands">
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>
+                            Инвентарь бармен
+                          </summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Инвентарь бармен
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Топпинги</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Кофе</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Безалкогольные напитки</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>
+                            Оборудование
+                          </summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Оборудование
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Кордиалы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Чай</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Украшения для коктейлей</a>
+                                  </li>
+                                </ul>
+                                <ul class="assortment-brands">
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>Посуда</summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Посуда
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Джус-боллы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Соусы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Джус-боллы</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>
+                            Сервировка
+                          </summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Сервировка
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Соусы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Сиропы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Смеси, соки</a>
+                                  </li>
+                                </ul>
+                                <ul class="assortment-brands">
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>
+                            Уборка и дезинфекция
+                          </summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Уборка и дезинфекция
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Какао</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Пюре</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Основы для напитков</a>
+                                  </li>
+                                </ul>
+                                <ul class="assortment-brands">
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>
+                            Одноразовая посуда и упаковка
+                          </summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Одноразовая посуда и упаковка
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Горячий шоколад</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Топпинги</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Кофе</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                        <details class="assortment__item">
+                          <summary class="assortment__name icon-arr-right" data-spoller-close>Мерч</summary>
+                          <div class="assortment__inner">
+                            <div class="assortment__content">
+                              <button
+                                class="assortment__title icon-arr-left"
+                                type="button"
+                                data-assortment-close
+                              >
+                                Мерч
+                              </button>
+                              <div class="assortment__items">
+                                <ul class="assortment-menu">
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Безалкогольные напитки</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Кордиалы</a>
+                                  </li>
+                                  <li class="assortment-menu__item">
+                                    <a class="assortment-menu__link" href="./catalog.html">Чай</a>
+                                  </li>
+                                </ul>
+                                <ul class="assortment-brands">
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-1.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                  <li class="assortment-brands__item">
+                                    <a class="assortment-brands__link" href="./catalog.html">
+                                      <picture><source srcset="./img/content/logo/logo-2.webp" type="image/webp"><img class="assortment-brands__img" src="./img/content/logo/logo-2.png" alt="image"></picture>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="search">
+                  <button class="header-btn icon-search" type="button" title="Поиск" data-search>
+                    <span class="_seo">Поиск</span>
+                  </button>
+                  <div class="search__dropdown">
+                    <div class="search__body">
+                      <form class="search__form" action="#">
+                        <div class="search__main">
+                          <input class="search__input" type="search" placeholder="Найти">
+                          <button class="search__btn search__btn_submit icon-search" type="submit">
+                            <span class="_seo">Искать</span>
+                          </button>
+                        </div>
+                        <div class="search__action">
+                          <button
+                            class="search__btn search__btn_close icon-arr-left"
+                            type="button"
+                            title="Закрыть поиск"
+                            data-search
+                          >
+                            <span class="_seo">Закрыть поиск</span>
+                          </button>
+                          <button
+                            class="search__btn search__btn_reset icon-cross"
+                            type="button"
+                            title="Очистить"
+                          >
+                            <span class="_seo">Очистить</span>
+                          </button>
+                          <select
+                            data-class-modifier="search"
+                            data-show-selected
+                            data-speed="0"
+                            data-pseudo-label="Искать:"
+                          >
+                            <option value="Везде" selected>Везде</option>
+                            <option value="Каталог">В каталоге</option>
+                            <option value="Блог">В блоге</option>
+                          </select>
+                        </div>
+                      </form>
+                      <div class="search__result"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu">
+                  <button class="menu__btn header-btn icon-burger" type="button" title="Меню сайта">
+                    <span class="_seo">Меню сайта</span>
+                  </button>
+                  <div class="menu__dropdown">
+                    <div class="menu__body">
+                      <div class="menu__box menu__box_catalog"></div>
+                      <div class="menu__box menu__box_nav"></div>
+                      <div class="menu__box menu__box_extra"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="user-bar" data-lp>
+                <ul class="user-bar__list">
+                  <li class="user-bar__item user-bar__item_mob">
+                    <a class="user-bar__link icon-menu" href="./catalog.html">
+                      <span class="user-bar__name">Каталог</span>
+                    </a>
+                  </li>
+                  <li class="user-bar__item">
+                    <a class="user-bar__link icon-favorites" href="./favorites.html">
+                      <span class="user-bar__name">Избранное</span>
+                      <span class="user-bar__info">999</span>
+                    </a>
+                  </li>
+                  <li class="user-bar__item">
+                    <a class="user-bar__link icon-cart" href="./cart.html">
+                      <span class="user-bar__name">Корзина</span>
+                      <span class="user-bar__info">2</span>
+                    </a>
+                  </li>
+                  <li class="user-bar__item">
+                    <a class="user-bar__link icon-user" href="./lc.html">
+                      <span class="user-bar__name">Анастасия Т.</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page delivery">
+        <div class="container">
+          <div class="page-head">
+            <div class="container">
+              <div class="page-head__body page-head__body_border">
+                <ul class="breadcrumbs">
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <span class="breadcrumbs__link">Доставка</span>
+                  </li>
+                </ul>
+                <div class="page-head__main">
+                  <h1 class="page-head__title _h2">Доставка</h1>
+                </div>
+                <ul class="tabs__nav">
+                  <li class="tabs__item">
+                    <button class="tabs__trigger is-active" type="button" data-tab="tab-delivery">
+                      Доставка
+                    </button>
+                  </li>
+                  <li class="tabs__item">
+                    <button class="tabs__trigger" type="button" data-tab="tab-pickup">
+                      Самовывоз
+                    </button>
+                  </li>
+                  <li class="tabs__item">
+                    <button class="tabs__trigger" type="button" data-tab="tab-payment">
+                      Оплата
+                    </button>
+                  </li>
+                  <li class="tabs__item">
+                    <button class="tabs__trigger" type="button" data-tab="tab-marketplace">
+                      Маркетплейсы
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="tabs delivery-tabs" data-tabs="delivery">
+          
+            <div class="tabs__content">
+              <section class="tabs__pane is-active" id="tab-delivery">
+                <div class="container">
+                  <div class="delivery-grid">
+                    <!-- Москва и МО -->
+                    <article class="delivery-card">
+                      <h2 class="delivery-card__title _h3">Москва и МО</h2>
+              
+                      <p>
+                        Доставка курьером по Москве
+                        <strong>в пределах МКАД + 5 км:</strong>
+                      </p>
+                      <ul class="delivery-card__list delivery-card__list_dash">
+                        <li>
+                          <strong>Доставка 300 рублей</strong> при заказе от 6 до 11 бутылок
+                          по 700 мл.
+                        </li>
+                        <li>
+                          <strong>Бесплатная доставка</strong> при заказе от 12 бутылок
+                          по 700 мл.
+                        </li>
+                      </ul>
+              
+                      <h3 class="_h6">Доставка за МКАД:</h3>
+                      <ul class="delivery-card__list">
+                        <li>
+                          <strong>От 5 до 15 км за МКАД:</strong>
+                          <ul class="delivery-card__sublist">
+                            <li>бесплатная доставка при заказе от 8 000 рублей;</li>
+                            <li>
+                              при сумме заказа менее 8 000 рублей — доставка 800 рублей.
+                            </li>
+                          </ul>
+                        </li>
+              
+                        <li>
+                          <strong>От 15 до 50 км за МКАД:</strong>
+                          <ul class="delivery-card__sublist">
+                            <li>бесплатная доставка при заказе от 10 000 рублей;</li>
+                            <li>
+                              при сумме заказа менее 10 000 рублей — 60 рублей
+                              за каждый километр.
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </article>
+              
+                    <!-- По территории РФ -->
+                    <article class="delivery-card">
+                      <h2 class="delivery-card__title _h3">По территории РФ</h2>
+              
+                      <div class="delivery-card__desc">
+                        <p><strong class="color-warning">Срок доставки составляет от 3 дней.</strong></p>
+              
+                        <p>
+                          Стоимость рассчитывается с помощью калькулятора, в то же время вы
+                          можете связаться с нашим менеджером для запроса особых условий,
+                          дополнительной упаковки или обрешётки на сиропы.
+                        </p>
+                
+                        <p>
+                          При доставке компанией СДЭК оплата производится при получении товара!
+                        </p>
+                      </div>
+                    </article>
+                  </div> 
+
+                  <div class="contact-cards">
+                      <!-- Для заказов -->
+                        <article class="contact-card">
+                          <span class="contact-card__icon icon-store"></span>
+                          <h3 class="contact-card__title _h3">Для заказов</h3>
+                          <p class="contact-card__time color-label">
+                            Режим работы с 9:00–18:00 (с понедельника по пятницу)
+                          </p>
+                          <p class="contact-card__phone _h2">8 800 4444 8004</p>
+                          <a class="contact-card__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                        </article>
+
+                      <!-- Самовывоз -->
+                        <article class="contact-card">
+                          <span class="contact-card__icon icon-truck"></span>
+                          <h3 class="contact-card__title _h3">Самовывоз</h3>
+                          <p class="contact-card__addr color-label">
+                            630126, г. Новосибирск, ул. Выборная&nbsp;201в
+                          </p>
+                          <p class="contact-card__phone _h2">8 800 4444 8004</p>
+                          <a class="contact-card__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                        </article>
+
+                      <!-- Руководитель -->
+                        <article class="contact-card">
+                          <span class="contact-card__icon icon-briefcase"></span>
+                          <h3 class="contact-card__title _h3">Руководитель подразделения</h3>
+                          <p class="contact-card__phone _h2">8 800 4444 8004</p>
+                          <a class="contact-card__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                        </article>
+                  </div>
+
+                  <section class="delivery-slider">
+                    <h2 class="delivery-slider__title">ВЫ МОЖЕТЕ ВЫБРАТЬ<br>ЛЮБУЮ ТК ДЛЯ ДОСТАВКИ</h2>
+                    <p class="delivery-slider__text">
+                      Наш интернет-магазин предлагает широкий ассортимент товаров для барменов, бариста, поваров и всех, кто ценит качество и удобство на кухне или в заведении. Мы гордимся тем, что можем удовлетворить самые разнообразные потребности наших клиентов, предоставляя продукцию высокого качества от проверенных производителей.
+                    </p>
+                  
+                    <!-- слайдер со знакомыми «пулечками»‑ромбами -->
+                    <div class="delivery-slider__slider swiper">
+                      <div class="swiper-wrapper">
+                        <!-- 5 элементов вьюпорта на десктопе -->
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <div class="delivery-slider__slide swiper-slide">ЛОГОТИП</div>
+                        <!-- …добавляйте сколько нужно -->
+                      </div>
+                    </div>
+                  
+                    <!-- навигация -->
+                    <div class="categories__actions" data-slider-nav="">
+                      <button class="categories__btn categories__btn_prev icon-arr-left _is-disabled" data-slider-btn="prev" type="button" disabled="">
+                        <span class="_seo">Предыдущий слайд</span>
+                      </button>
+                      <div class="categories__pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal" data-slider-pagination=""><button class="categories__bullet _is-active"></button><button class="categories__bullet"></button></div>
+                      <button class="categories__btn categories__btn_next icon-arr-right" data-slider-btn="next" type="button">
+                        <span class="_seo">Следующий слайд</span>
+                      </button>
+                    </div>
+                  </section>
+                  
+                  
+                </div>
+              </section>
+
+              <section class="tabs__pane" id="tab-pickup" hidden>
+                <div class="container">
+                  <div class="pickup-location">
+                    <article class="delivery-card">
+                      <h2 class="delivery-card__title _h3">МОСКВА И МО</h2>
+                      <div class="delivery-card__desc">
+                        <p>141101, Московская область, город Щелково, ул. Хотовская, д.34, стр.2</p>
+                        <p>Склад</p>
+                        <p><a href="tel:+79260710387">+7 926 071 03 87</a></p>
+                      </div>
+                    </article>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2236.3987586796698!2d38.012400976959135!3d55.90778588004304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ad2d71d483e7d%3A0x3f35065b6e0aa79c!2z0KXQvtGC0L7QstGB0LrQsNGPINGD0LsuLCAzNCDQutC-0YDQv9GD0YEgMiwg0KnRkdC70LrQvtCy0L4sINCc0L7RgdC60L7QstGB0LrQsNGPINC-0LHQuy4sINCg0L7RgdGB0LjRjywgMTQxMTAx!5e0!3m2!1sru!2skz!4v1753137918389!5m2!1sru!2skz" width="818" height="515" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                   
+                  </div>
+                  <div class="pickup-location">
+                    <article class="delivery-card">
+                      <h2 class="delivery-card__title _h3">НОВОСИБИРСК</h2>
+                      <div class="delivery-card__desc">
+                        <p>630126, г. Новосибирск, ул. Выборная 201в</p>
+                        <p>Склад</p>
+                        <p><a href="tel:+79254331617">+7 925 433 16 17</a></p>
+                      </div>
+                    </article>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2288.301954857435!2d83.05228287691051!3d55.00287184950224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42dfe916fe29447b%3A0x2c81a38bb989c006!2z0YPQuy4g0JLRi9Cx0L7RgNC90LDRjywgMjAx0LIsINCd0L7QstC-0YHQuNCx0LjRgNGB0LosINCd0L7QstC-0YHQuNCx0LjRgNGB0LrQsNGPINC-0LHQuy4sINCg0L7RgdGB0LjRjywgNjMwMTI2!5e0!3m2!1sru!2skz!4v1753137944182!5m2!1sru!2skz" width="818" height="515" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                  </div>
+                </div>
+              </section>
+
+              <section class="tabs__pane" id="tab-payment" hidden>
+                <div class="container">
+                  <div class="payment-info">
+                    <p>Для принятия онлайн-платежей мы используем надежный эквайринг от<br>Сбербанка - без комиссии, утечки данных и без сохранения данных вашей <br>карты.</p>
+                  </div>
+                  <div class="payment-methods">
+                    <div class="payment-methods__item">
+                      <span class="payment-methods__icon icon-receipt"></span>
+                      <h3 class="payment-methods__title">БЕЗ КОМИССИИ</h3>
+                      <p>Онлайн-оплата любой картой без комиссии</p>
+                    </div>
+                    <div class="payment-methods__item">
+                      <span class="payment-methods__icon icon-disscount"></span>
+                      <h3 class="payment-methods__title">БЕЗ НАЦЕНКИ</h3>
+                      <p>Оплата по счёту без наценки</p>
+                    </div>
+                    <div class="payment-methods__item">
+                      <span class="payment-methods__icon icon-users"></span>
+                      <h3 class="payment-methods__title">ОПЛАТА НАЛИЧНЫМИ</h3>
+                      <p>Оплата при получении наличными или картой при любой сумме заказа</p>
+                    </div>
+                    <div class="payment-methods__item">
+                      <span class="payment-methods__icon icon-cart"></span>
+                      <h3 class="payment-methods__title">ВОЗВРАТ</h3>
+                      <p>Возврат денежных средств осуществляется менеджером по вашему запросу. Максимальный срок возврата с момента его осуществления менеджером - 3 рабочих дня</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="tabs__pane" id="tab-marketplace" hidden>
+                <div class="container">
+                  <div class="marketplaces">
+                    <div class="marketplaces__item">
+                      <figure>
+                        <picture><source srcset="./img/content/logo/logo-5.png" type="image/webp"><img class="categories__img" src="./img/content/logo/logo-5.png" alt="Продукты"></picture>
+                      </figure>
+                    </div>
+                    <div class="marketplaces__item">
+                      <figure>
+                        <picture><source srcset="./img/content/logo/logo-4.webp" type="image/webp"><img class="categories__img" src="./img/content/logo/logo-4.webp" alt="Продукты"></picture>
+                      </figure>
+                    </div>
+                   
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__subscribe subscribe">
+            <div class="subscribe__head">
+              <h4 class="subscribe__title">Подпишись</h4>
+              <p class="subscribe__text">
+                Подписывайся на рассылку и будь самым первым в курсе актуальных новостей
+                и акций от компании Herbarista.
+              </p>
+            </div>
+            <div class="subscribe__main">
+              <form class="subscribe__form" action="#">
+                <label class="input input_middle">
+                  <input class="input__body input__body_contour" type="email" placeholder=" " required>
+                  <span class="input__placeholder">Ваш email</span>
+                </label>
+                <button class="subscribe__btn btn btn_normal btn_secondary" type="submit">Подписаться</button>
+              </form>
+              <p class="subscribe__agree">
+                Я соглашаюсь получать рекламные и иные маркетинговые сообщения от Herbarista
+                на условиях Политики конфиденциальности и Пользовательского соглашения.
+              </p>
+            </div>
+          </div>
+          <div class="footer__body">
+            <div class="footer__row footer__row_main">
+              <div class="footer__col footer__col_head">
+                <a class="logo logo_footer" href="./index.html#wrapper">
+                  <img class="logo__img" src="./img/content/logo_light.svg" alt="logo">
+                </a>
+                <div class="footer-contacts">
+                  <ul class="footer-contacts__list">
+                    <li class="footer-contacts__item">
+                      <a class="footer-contacts__link" href="tel:88004448004">8 800 444 80 04</a>
+                    </li>
+                    <li class="footer-contacts__item">
+                      <a class="footer-contacts__link" href="mailto:info@herbarista.store" target="_blank">
+                        info@herbarista.store
+                      </a>
+                    </li>
+                  </ul>
+                  <p class="footer-contacts__text">
+                    Приём заказов осуществляется <br>
+                    с 9:00 до 21:00 без выходных
+                  </p>
+                </div>
+              </div>
+              <div class="footer__col footer__col_menu">
+                <h4 class="footer__title">Покупателям</h4>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./categories.html">Каталог</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="@html">Доставка</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="@html">Самовывоз</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="@html">Оплата</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="@html">Маркетплейсы</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__col footer__col_menu">
+                <h4 class="footer__title">Компания</h4>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="@html">Производство</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="@html">О компании</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./faq.html">Вопросы и ответы</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="@html">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__row footer__row_info">
+              <div class="footer__col footer__col_info">
+                <h4 class="footer__title">Способы оплаты</h4>
+                <div class="pay-info">
+                  <ul class="pay-info__list">
+                    <li class="pay-info__item">
+                      <img class="pay-info__img" src="./img/content/pay/pay-1.svg" alt="image">
+                    </li>
+                    <li class="pay-info__item">
+                      <img class="pay-info__img" src="./img/content/pay/pay-2.svg" alt="image">
+                    </li>
+                    <li class="pay-info__item">
+                      <img class="pay-info__img" src="./img/content/pay/pay-3.svg" alt="image">
+                    </li>
+                  </ul>
+                  <p class="pay-info__text">
+                    Вы можете оплатить покупки наличными, либо выбрать другой способ оплаты
+                  </p>
+                </div>
+              </div>
+              <div class="footer__col footer__col_info footer__col_links">
+                <h4 class="footer__title">Наши социальные сети</h4>
+                <div class="footer__social">
+                  <ul class="social">
+                    <li class="social__item">
+                      <a class="social__link" href="#">
+                        <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M16.2611 20.9252C10.4357 20.9252 7.11305 16.8524 6.97461 10.0752H9.8926C9.98844 15.0495 12.1397 17.1565 13.8436 17.5909V10.0752H16.5912V14.3652C18.2738 14.1806 20.0417 12.2256 20.638 10.0752H23.3856C23.1609 11.1905 22.7129 12.2465 22.0698 13.1771C21.4266 14.1078 20.602 14.8931 19.6476 15.4839C20.7129 16.0237 21.6539 16.7879 22.4084 17.7258C23.1628 18.6637 23.7137 19.7542 24.0246 20.9252H21.0001C20.721 19.9081 20.1538 18.9976 19.3695 18.3079C18.5852 17.6181 17.6187 17.1798 16.5912 17.0479V20.9252H16.2611Z" fill="currentColor" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#">
+                        <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M16.9946 16.9946C15.7768 18.2513 15.6882 19.8179 15.583 23.25C18.7827 23.25 20.9914 23.2389 22.1318 22.1318C23.2389 20.9914 23.25 18.6775 23.25 15.583C19.8179 15.6937 18.2513 15.7768 16.9946 16.9946ZM7.75 15.583C7.75 18.6775 7.76107 20.9914 8.86821 22.1318C10.0086 23.2389 12.2173 23.25 15.417 23.25C15.3063 19.8179 15.2232 18.2513 14.0054 16.9946C12.7487 15.7768 11.1821 15.6882 7.75 15.583ZM15.417 7.75C12.2229 7.75 10.0086 7.76107 8.86821 8.86821C7.76107 10.0086 7.75 12.3225 7.75 15.417C11.1821 15.3063 12.7487 15.2232 14.0054 14.0054C15.2232 12.7487 15.3118 11.1821 15.417 7.75ZM16.9946 14.0054C15.7768 12.7487 15.6882 11.1821 15.583 7.75C18.7827 7.75 20.9914 7.76107 22.1318 8.86821C23.2389 10.0086 23.25 12.3225 23.25 15.417C19.8179 15.3063 18.2513 15.2232 16.9946 14.0054Z" fill="currentColor" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <ul class="footer-info">
+                  <li class="footer-info__item">
+                    <a class="footer-info__link" href="./">Политика обработки персональных данных</a>
+                  </li>
+                  <li class="footer-info__item">
+                    <a class="footer-info__link" href="./">Пользовательское соглашение</a>
+                  </li>
+                  <li class="footer-info__item">
+                    <a class="footer-info__link" href="./">Публичная оферта</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer__copy">
+            <p>&copy; 2024 Herbarista Syrups. All rights reserved</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html> 
+
