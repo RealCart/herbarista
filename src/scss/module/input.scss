@@ -99,3 +99,31 @@
     transition-property: color, background-color, border-color, opacity, transform, top;
   }
 }
+
+.input_group {
+  position: relative;
+
+  .input__body {
+    padding-right: calc(var(--padding-input) + 96px); // space for button (~80px)
+  }
+
+  .input__action {
+    position: absolute;
+    top: 50%;
+    right: var(--padding-input);
+    transform: translateY(-50%);
+
+    padding: 0;
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: var(--text-small);
+    color: var(--color-main);
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

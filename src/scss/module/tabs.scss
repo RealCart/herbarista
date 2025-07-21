@@ -1,0 +1,59 @@
+// Tabs component
+
+.tabs {
+  &__nav {
+    display: flex;
+    gap: var(--gap-small);
+    padding: 12px 0;
+    // allow horizontal scroll on small screens
+    @extend %scroll-full-width;
+
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      overflow: visible;
+      scrollbar-width: auto;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0; // keep items from shrinking when scrolling
+  }
+
+  &__trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--height-btn-small);
+    padding: 8px 18px;
+    font-size: var(--text-normal);
+    line-height: 1;
+    color: var(--color-main);
+    background-color: var(--color-shadow-lightest);
+    border: none;
+    border-radius: var(--radius-smallest);
+    cursor: pointer;
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--color-shadow);
+    }
+
+    @media (any-hover: hover) {
+      &:not(.is-active):not(:active):hover {
+        background-color: var(--color-shadow);
+      }
+    }
+
+    &.is-active {
+      color: var(--color-neutral);
+      background-color: var(--color-main);
+      pointer-events: none;
+    }
+  }
+
+  // Optional: hide panes that have the [hidden] attribute
+  &__pane[hidden] {
+    display: none !important;
+  }
+} 

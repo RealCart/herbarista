@@ -25,6 +25,8 @@
 @import "module/page-head.scss";
 @import "module/breadcrumbs.scss";
 @import "module/pagination.scss";
+@import "module/tabs.scss";
+@import "module/delivery/delivery.scss";
 @import "module/default-slider.scss";
 @import "module/wysiwyg.scss";
 @import "module/popup.scss";
@@ -43,6 +45,7 @@
 @import "module/blog/blog.scss";
 
 @import "module/favorites/favorites.scss";
+@import "module/cart/cart.scss";
 
 @import "module/catalog/category.scss";
 @import "module/catalog/catalog.scss";

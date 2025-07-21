@@ -1,0 +1,331 @@
+
+.delivery-section {
+  margin-top: var(--gap-section-head);
+
+  @media (min-width: ($md3+px)) { // ≥768px
+    margin-top: calc(1.5 * var(--gap-section-head));
+  }
+}
+
+.delivery-grid {
+  display: grid;
+  gap: var(--gap-normal-extra);
+
+  @media (min-width: ($md3+px)) { // ≥768px
+    grid-template-columns: 1fr 1fr;
+    gap: calc(2 * var(--gap-normal-extra));
+  }
+}
+
+.delivery-grid,
+.contact-cards {
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.delivery-card {
+  padding: 28px 24px;
+  background-color: var(--color-shadow-lightest);
+  border-radius: var(--radius-small);
+  @extend %transition;
+
+  // optional hover effect
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--color-shadow-light);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__desc p {
+    margin-top: 20px;
+  }
+
+  &__list,
+  &__sublist {
+    margin: 18px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list_dash > li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+
+    &::before {
+      content: "—"; // long dash
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__sublist {
+    margin-top: 6px;
+    padding-left: 26px; // room for disc bullets
+    list-style: disc;
+
+    li {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+// Utility
+.color-warning {
+  color: var(--color-warning);
+} 
+
+.contact-grid {
+  display: grid;
+  gap: var(--gap-normal-extra);
+  margin-top: 38px;
+
+  @media (min-width: ($md3+px)) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(2 * var(--gap-normal-extra));
+  }
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.delivery-companies-slider{
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.contact-card {
+  @extend .delivery-card; // inherit basic styles
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  &__icon {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__time,
+  &__addr {
+    font-size: var(--text-large);
+  }
+
+  &__phone {
+    margin-top: auto; // push to bottom
+  }
+
+  &__email {
+    color: var(--color-main);
+    text-decoration: none;
+    @extend %transition;
+
+    &:focus-visible {
+      outline: none;
+      color: var(--color-main-light);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--color-main-light);
+      }
+    }
+  }
+}
+.delivery-card__desc p {
+  display: flex;
+  justify-content: space-between;
+}
+.delivery-card__desc p a {
+  color: inherit;
+  text-decoration: none;
+}
+.pickup-location {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+.map-placeholder {
+  background-color: #f0f0f0;
+}
+.payment-info {
+  margin-bottom: 20px;
+}
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  &__item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  &__icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  &__title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+.marketplaces {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+
+  &__item {
+    a {
+      display: block;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+} 
+.marketplaces__item {
+  width: 300px;
+  height: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+//‑‑‑ переменные ‑‑‑//
+$black:        #000;
+$gray-bg:      #f5f5f5;
+$border:       #ebebeb;
+
+$font-main:    'Montserrat', sans-serif;
+
+$break-lg:     1023px;    // ≥   1024 — десктоп
+$break-md:      767px;    // 768‑1023 — планшет
+$break-sm:      479px;    // ≤    479 — телефон
+
+//‑‑‑ миксин для медиавыражений ‑‑‑//
+@mixin respond($bp) {
+  @media (max-width: $bp) { @content; }
+}
+
+//‑‑‑ секция «доставка» (BEM: .delivery‑‑‑) ‑‑‑//
+.delivery-slider {
+  margin-top: 38px;
+  background: $gray-bg;
+  padding: 96px 15px;
+  text-align: center;
+
+  // заголовок и описание
+  &__title {
+    font: 900 64px/1 $font-main;
+    text-transform: uppercase;
+  }
+  &__text  {
+    max-width: 520px;
+    margin: 32px auto 64px;
+    font: 400 18px/1.6 $font-main;
+  }
+
+  //‑‑‑ слайдер ‑‑‑//
+  &__slider {
+    position: relative;
+    overflow: hidden;   // прячет соседние слайды
+
+    .swiper-wrapper { display: flex; }
+
+    // карточка‑«ЛОГОТИП»
+    &-slide,
+    .swiper-slide {
+      flex: 0 0 20%;                   // 5 шт. вьюпорта
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 15px;
+      border: 1px solid $border;
+      background: #fff;
+      font: 700 36px/1 $font-main;
+      text-transform: uppercase;
+
+      @include respond($break-lg) { flex: 0 0 33.333%; }
+      @include respond($break-md) { flex: 0 0 50%; }
+      @include respond($break-sm) { flex: 0 0 100%; }
+    }
+
+    //‑‑‑ стрелки ‑‑‑//
+    &-arrow {
+      position: absolute;
+      top: 100%;
+      transform: translateY(40px);
+      width: 12px; height: 12px;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &--prev { left: calc(50% - 120px); }
+      &--next { right: calc(50% - 120px); }
+
+      &::before {
+        content: '';
+        position: absolute; inset: 0;
+        margin: auto;
+        width: 8px; height: 8px;
+        border-top: 2px solid $black;
+        border-left: 2px solid $black;
+        transform: rotate(-45deg);
+      }
+      &--next::before { transform: rotate(135deg); }
+    }
+
+    //‑‑‑ ромбики‑пагинация ‑‑‑//
+    &-pagination {
+      position: absolute;
+      top: 100%; left: 50%;
+      transform: translate(-50%, 40px);
+      display: flex; gap: 14px;
+
+      .swiper-pagination-bullet {
+        width: 8px; height: 8px;
+        border: 1px solid $black;
+        transform: rotate(45deg);          // ромб
+        background: transparent;
+        margin: 0 !important;
+        opacity: 1;
+
+        &-active { background: $black; }   // залитый ромб
+      }
+    }
+  }
+}

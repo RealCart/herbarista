@@ -13,6 +13,7 @@ import {
   menuClose,
   getDigFormat,
   getDigFromString,
+  toggleActiveClass,
 } from "./module/functions.js";
 import "./module/dynamic_adapt.js";
 import "./module/popup.js";
@@ -38,6 +39,34 @@ window.addEventListener("load", function () {
   menuInit();
   spollers();
   tabs();
+  toggleActiveClass(".your-selector");
+
+  document.querySelectorAll(".tabs__item").forEach((clickedTab) => {
+    clickedTab.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const tabsParent = this.closest(".tabs__nav");
+      if (tabsParent) {
+        tabsParent.querySelectorAll(".tabs__trigger").forEach((trigger) => {
+          trigger.classList.remove("is-active");
+        });
+      }
+
+      const clickedTrigger = this.querySelector(".tabs__trigger");
+      clickedTrigger.classList.add("is-active");
+
+      const tabId = clickedTrigger.dataset.tab;
+      document.querySelectorAll(".tabs__pane").forEach((pane) => {
+        if (pane.id === tabId) {
+          pane.classList.add("is-active");
+          pane.hidden = false;
+        } else {
+          pane.classList.remove("is-active");
+          pane.hidden = true;
+        }
+      });
+    });
+  });
 
   const disableIOSTextFieldZoom = () => {
     if (!isIOS()) {
@@ -414,7 +443,7 @@ window.addEventListener("load", function () {
 
     new Swiper(".categories__slider", {
       modules: [Navigation, Pagination],
-      slidesPerView: "auto",
+      slidesPerView: 5,
       spaceBetween: 6,
       wrapperClass: "categories__items",
       slideClass: "categories__item",
@@ -435,9 +464,6 @@ window.addEventListener("load", function () {
         disabledClass: "_is-disabled",
         lockClass: "_is-lock",
       },
-      breakpoints: {
-        480: {},
-      },
       on: {
         init: (swiper) => {
           swiper.el.classList.toggle("_is-lock", swiper.isLocked);
@@ -448,6 +474,54 @@ window.addEventListener("load", function () {
       },
     });
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const sliderContainer = document.querySelector('.delivery-slider');
+    if (!sliderContainer) return;
+  
+    const sliderEl = sliderContainer.querySelector('.delivery-slider__slider');
+    if (!sliderEl) return;
+  
+    sliderEl.classList.add('_is-init');
+  
+    new Swiper(sliderEl, {
+      // если подключён swiper‑bundle.min.js, modules можно убрать
+      // modules: [Navigation, Pagination],
+  
+      slidesPerView: 'auto',
+      spaceBetween: 6,
+      watchOverflow: true,     // снимает «блокировку», когда слайдов мало
+  
+      pagination: {
+        el: sliderContainer.querySelector('.categories__pagination'),
+        clickable: true,
+        bulletElement: 'button',
+        bulletClass: 'categories__bullet',
+        bulletActiveClass: '_is-active',
+        lockClass: '_is-lock',
+      },
+  
+      navigation: {
+        prevEl: sliderContainer.querySelector('.categories__btn_prev'),
+        nextEl: sliderContainer.querySelector('.categories__btn_next'),
+        disabledClass: '_is-disabled',
+        lockClass: '_is-lock',
+      },
+  
+      breakpoints: {           // адаптив
+        1024: { slidesPerView: 5 },
+         768: { slidesPerView: 3 },
+         480: { slidesPerView: 2 },
+           0: { slidesPerView: 1 },
+      },
+  
+      on: {
+        init(sw)   { sliderEl.classList.toggle('_is-lock', sw.isLocked); },
+        resize(sw) { sliderEl.classList.toggle('_is-lock', sw.isLocked); },
+      },
+    });
+  });
+  
 
   if (document.querySelector(".product__media")) {
     const previewSliderBody = document.querySelector(".product-preview");
