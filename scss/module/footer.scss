@@ -19,12 +19,17 @@
   }
 
   &__body {
-    --gap-row: 28px;
-    --gap-column: 34px;
+    --gap-row: 20px;
+    --gap-column: 20px;
     display: flex;
     flex-direction: column;
     gap: var(--gap-row) var(--gap-column);
     padding: 28px 0;
+
+    @media (min-width: ($md3+px)) {
+      --gap-row: 28px;
+      --gap-column: 34px;
+    }
 
     @media (min-width: ($md2+px)) {
       // от 1024px
@@ -71,8 +76,12 @@
 
       @media (min-width: ($md3+px)) {
         // от 767рх
-        width: 300px;
+        width: 100%;
         flex-grow: 0;
+      }
+
+      @media (min-width: ($md2+px)) {
+        width: 300px;
       }
 
       @media (min-width: ($md11+px)) {
@@ -82,7 +91,7 @@
     }
 
     &_menu {
-      width: 35%;
+      width: 45%;
 
       @media (min-width: ($md3+px)) {
         // от 767рх
@@ -186,7 +195,7 @@
 
   &__title {
     @extend %Denistina400;
-    font-size: 58px;
+    font-size: 48px;
 
     @media (min-width: ($md3+px)) {
       // от 767рх
@@ -269,7 +278,13 @@
       // от 480рх
       --height-btn: var(--height-input);
       flex-shrink: 0;
+      margin: 0;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 768px) {
       margin: 0 0 0 calc(-2 * var(--radius-smallest));
+      margin-top: 0;
     }
   }
 
@@ -317,7 +332,11 @@
     }
 
     &[href^="tel:"] {
-      font-size: 30px;
+      font-size: 24px;
+
+      @media (min-width: ($md3+px)) {
+        font-size: 30px;
+      }
 
       @media (min-width: ($md1+px)) {
         // от контейнера

@@ -65,6 +65,19 @@ window.addEventListener("load", function () {
           pane.hidden = true;
         }
       });
+
+      const pageTitle = document.querySelector(".page-head__title");
+      const breadcrumbsLink = document.querySelector(".breadcrumbs__link__m2");
+      if (pageTitle) {
+        const tabText = clickedTrigger.textContent.trim();
+          if (tabText === "Новосибирск") {
+            pageTitle.textContent = "Контакты Новосибирск";
+            breadcrumbsLink.textContent = "Контакты Новосибирск";
+        } else if (tabText === "Москва и МО") {
+          pageTitle.textContent = "Контакты Москва и МО";
+          breadcrumbsLink.textContent = "Контакты Москва и МО";
+        }
+      }
     });
   });
 
@@ -928,3 +941,56 @@ window.addEventListener("load", function () {
     adaptiveFix();
   });
 });
+
+// Autosize textarea
+const textareas = document.querySelectorAll('textarea.c-form__textarea');
+textareas.forEach(textarea => {
+  textarea.setAttribute('style', 'height:' + (textarea.scrollHeight) + 'px;overflow-y:hidden;');
+  textarea.addEventListener("input", OnInput, false);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.tabs');
+    if (tabs.length > 0) {
+        tabs.forEach(tab => {
+            const tabsNav = tab.querySelector('.tabs__nav');
+            if (!tabsNav) return;
+            const tabsBtns = tabsNav.querySelectorAll('.tabs__btn');
+            const tabsContent = tab.querySelector('.tabs__content');
+            if (!tabsContent) return;
+            const tabsPanels = tabsContent.querySelectorAll('.tabs__panel');
+
+            tabsNav.addEventListener('click', e => {
+                const targetBtn = e.target.closest('.tabs__btn');
+                if (targetBtn) {
+                    const previouslyActive = tabsNav.querySelector('.tabs__btn_active');
+                    if (previouslyActive) {
+                        previouslyActive.classList.remove('tabs__btn_active');
+                    }
+                    targetBtn.classList.add('tabs__btn_active');
+
+                    tabsPanels.forEach(panel => {
+                        panel.classList.remove('tabs__panel_active');
+                    });
+                    
+                    const newActivePanelIndex = Array.from(tabsBtns).indexOf(targetBtn);
+                    if(tabsPanels[newActivePanelIndex]) {
+                        tabsPanels[newActivePanelIndex].classList.add('tabs__panel_active');
+                    }
+                }
+            })
+        });
+    }
+});
+
+function OnInput() {
+  this.style.height = 'auto';
+  this.style.height = (this.scrollHeight) + 'px';
+}
+
+window["FLS"] = true;
+isWebp();
+addTouchClass();
+addLoadedClass();
+menuInit();
+

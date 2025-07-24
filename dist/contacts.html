@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FFFFFF" />
     <link rel="icon" href="./img/content/favicon.svg" />
-    <title>Корзина</title>
+    <title>Доставка</title>
     <link rel="stylesheet" href="./css/style.min.css" />
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -706,8 +706,8 @@
         </div>
       </header>
 
-      <main class="page">
-        <section class="cart">
+      <main class="page delivery">
+        <div class="container">
           <div class="page-head">
             <div class="container">
               <div class="page-head__body page-head__body_border">
@@ -716,241 +716,344 @@
                     <a class="breadcrumbs__link" href="./index.html">Главная</a>
                   </li>
                   <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Корзина</span>
+                    <span class="breadcrumbs__link breadcrumbs__link__m2">Контакты Москва и МО</span>
                   </li>
                 </ul>
-                <div class="cursive-title cursive-title_right cursive-title_shadow" aria-hidden="true">
-                  <span>Покупки</span>
-                </div>
                 <div class="page-head__main">
-                  <h1 class="page-head__title _h2">Корзина</h1>
+                  <h1 class="page-head__title _h2">Контакты Москва и МО</h1>
                 </div>
+                <ul class="tabs__nav">
+                  <li class="tabs__item">
+                    <button class="tabs__trigger is-active" type="button" data-tab="tab-delivery">
+                        Москва и МО
+                    </button>
+                  </li>
+                  <li class="tabs__item">
+                    <button class="tabs__trigger" type="button" data-tab="tab-pickup">
+                      Новосибирск
+                    </button>
+                  </li>
+                </ul>
               </div>
+              
             </div>
           </div>
 
-          <div class="container">
-            <div class="cabinet-extra _is-init swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden" data-delay="5000">
-              <div class="cabinet-extra__items" style="transition-duration: 0ms; transition-delay: 0ms;">
-                
-                
-              <article class="cabinet-extra__item cabinet-extra__item_next cabinet-extra__item_prev" data-swiper-slide-index="0" style="width: 1260px; opacity: 0; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                  <a class="cabinet-extra__link" href="#1">
-                    <span class="_seo">Открыть предложение</span>
-                  </a>
-                  <figure class="cabinet-extra__media">
-                    <picture><source srcset="./img/content/pic/extra-1.webp" type="image/webp"><img class="cabinet-extra__img" src="./img/content/pic/extra-1.jpg" alt="Изображение"></picture>
-                  </figure>
-                  <div class="cabinet-extra__content">
-                    <h2 class="cabinet-extra__title _h1">Летние скидки</h2>
-                    <p class="cabinet-extra__text">Скидки до 20%</p>
-                  </div>
-                </article><article class="cabinet-extra__item swiper-slide-visible swiper-slide-fully-visible cabinet-extra__item_active" data-swiper-slide-index="1" style="width: 1260px; opacity: 1; transform: translate3d(-1260px, 0px, 0px); transition-duration: 0ms;">
-                  <a class="cabinet-extra__link" href="#2">
-                    <span class="_seo">Открыть предложение</span>
-                  </a>
-                  <figure class="cabinet-extra__media">
-                    <picture><source srcset="./img/content/pic/extra-2.webp" type="image/webp"><img class="cabinet-extra__img" src="./img/content/pic/extra-2.jpg" alt="Изображение"></picture>
-                  </figure>
-                  <div class="cabinet-extra__content">
-                    <h2 class="cabinet-extra__title _h1">Финальные скидки</h2>
-                    <p class="cabinet-extra__text">Скидки до 50%</p>
-                  </div>
-                </article></div>
-              <div class="cabinet-extra__actions">
-                <button class="cabinet-extra__btn cabinet-extra__btn_prev btn btn_icon btn_main icon-arr-left" type="button">
-                  <span class="_seo">Предыдущий слайд</span>
-                </button>
-                <button class="cabinet-extra__btn cabinet-extra__btn_next btn btn_icon btn_main icon-arr-right" type="button">
-                  <span class="_seo">Следующий слайд</span>
-                </button>
-              </div>
-              <button class="cabinet-extra__close btn btn_small-extra btn_icon icon-cross" type="button">
-                <span class="_seo">Закрыть</span>
-              </button>
-            </div>
-          </div>
+          <div class="tabs delivery-tabs" data-tabs="delivery">
+          
+            <div class="tabs__content">
+              <section class="tabs__pane is-active" id="tab-delivery">
+                <div class="container">
 
-          <div class="container">
-            <div class="card__container">
-              <div class="cart__body">
-                <div class="cart-head">
-                  <div class="cart-head__count">2 товара</div>
-                  <button class="cart-head__clear" type="button">Очистить все</button>
+                  <div class="card-contacts">
+                        <article class="card-contact">
+                          <h3 class="card-contact__title">Для заказов</h3>
+                          <p class="card-contact__time">
+                            приём заказов осуществляется<br>
+                            с 9:00 до 21:00 без выходных
+                          </p>
+                          <p class="card-contact__phone">8 800 4444 8004</p>
+                          <a class="card-contact__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                        </article>
+
+                        <article class="card-contact">
+                          <h3 class="card-contact__title">Самовывоз</h3>
+                          <p class="card-contact__time">
+                            141101 Московская область, город<br>
+                            Щелково, ул. Хотовская, д.34, стр.2
+                          </p>
+                          <p class="card-contact__phone">8 800 4444 8004</p>
+                          <a class="card-contact__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                        </article>
+
+                        <article class="card-contact">
+                          <h3 class="card-contact__title">По вопросам дистрибьюторства</h3>
+                          <p class="card-contact__phone">8 800 4444 8004</p>
+                          <a class="card-contact__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                        </article>
+
+                        <article class="card-contact">
+                            <h3 class="card-contact__title">Отдел снабжения</h3>
+                            <p class="card-contact__phone">8 800 4444 8004</p>
+                            <a class="card-contact__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                          </article>
+
+                          <article class="card-contact">
+                            <h3 class="card-contact__title">Отдел кадров</h3>
+                            <p class="card-contact__phone">8 800 4444 8004</p>
+                            <a class="card-contact__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                          </article>
+                  </div>
+
+                  <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2236.3987586796698!2d38.012400976959135!3d55.90778588004304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ad2d71d483e7d%3A0x3f35065b6e0aa79c!2z0KXQvtGC0L7QstGB0LrQsNGPINGD0LsuLCAzNCDQutC-0YDQv9GD0YEgMiwg0KnRkdC70LrQvtCy0L4sINCc0L7RgdC60L7QstGB0LrQsNGPINC-0LHQuy4sINCg0L7RgdGB0LjRjywgMTQxMTAx!5e0!3m2!1sru!2skz!4v1753137918389!5m2!1sru!2skz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <a href="#" class="contact-map__btn btn btn_normal btn_main">Построить маршрут на карте</a>
+                    </div>
+                    <div class="requisites">
+                      <div class="requisites__header">
+                        <h2 class="requisites__title">РЕКВИЗИТЫ</h2>
+                        <p class="requisites__owner">ИП КОЛЕСНИКОВ ДМИТРИЙ СЕРГЕЕВИЧ</p>
+                        <div class="requisites__actions">
+                          <a href="#" class="requisites__btn btn btn_normal btn_main">СКАЧАТЬ РЕКВИЗИТЫ PDF</a>
+                          <a href="#" class="requisites__details-link">ПОДРОБНЕЕ</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="requisites">
+                      <div class="requisites__header">
+                        <h2 class="requisites__title">ПРОИЗВОДИТЕЛЬ</h2>
+                        <p class="requisites__owner">ООО "ДОКТОР ЗЭ И КОМПАНИЯ"</p>
+                        <div class="requisites__actions">
+                          <a href="#" class="requisites__btn btn btn_normal btn_main">СКАЧАТЬ РЕКВИЗИТЫ PDF</a>
+                          <a href="#" class="requisites__details-link">ПОДРОБНЕЕ</a>
+                        </div>
+                      </div>
+                      <div class="requisites__details">
+                        <div class="requisites__row">
+                          <span class="requisites__label">Bec</span>
+                          <span class="requisites__value">syrup.dr.z@mail.ru</span>
+                        </div>
+                        <div class="requisites__row">
+                          <span class="requisites__label">ОРГНИП</span>
+                          <span class="requisites__value">323547600153432</span>
+                        </div>
+                        <div class="requisites__row">
+                          <span class="requisites__label">ИНН</span>
+                          <span class="requisites__value">540133826910</span>
+                        </div>
+                        <div class="requisites__row">
+                          <span class="requisites__label">КПП Расчетный счет</span>
+                          <span class="requisites__value">40802810440000048406</span>
+                        </div>
+                        <div class="requisites__row">
+                          <span class="requisites__label">Банк</span>
+                          <span class="requisites__value">ПАО СБЕРБАНК</span>
+                        </div>
+                        <div class="requisites__row">
+                          <span class="requisites__label">БИК</span>
+                          <span class="requisites__value">044525225</span>
+                        </div>
+                        <div class="requisites__row">
+                          <span class="requisites__label">Корр.счет</span>
+                          <span class="requisites__value">30101810400000000225</span>
+                        </div>
+                        <div class="requisites__row2">
+                          <span class="requisites__label">Юридический адрес</span>
+                          <span class="requisites__value2">630089, Новосибирская область, г.о. город Новосибирск, г Новосибирск, ул Бориса Богаткова, д. 266/1, кв. 22.</span>
+                        </div>
+                        <div class="requisites__row2">
+                          <span class="requisites__label">Фактический адрес</span>
+                          <span class="requisites__value">630126, г. Новосибирск, ул. Выборная, д. 201В</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="requisites">
+                      <div class="requisites__header">
+                        <h2 class="requisites__title">РЕКВИЗИТЫ</h2>
+                        <p class="requisites__owner">ИП КОЛЕСНИКОВ ДМИТРИЙ СЕРГЕЕВИЧ</p>
+                        <div class="requisites__actions">
+                          <a href="#" class="requisites__btn btn btn_normal btn_main">СКАЧАТЬ РЕКВИЗИТЫ PDF</a>
+                          <a href="#" class="requisites__details-link">ПОДРОБНЕЕ</a>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <section class="contacts-form">
+                      <div class="contacts-form__left">
+                        <h2 class="contacts-form__title">Найдем решение<br>любого вопроса</h2>
+                        <img src="img/swoosh.svg" alt="" class="contacts-form__swoosh">
+                      </div>
+                      <div class="contacts-form__right">
+                        <form action="#" class="c-form">
+                          <label class="input input_middle input_group">
+                            <input class="input__body" type="text">
+                            <span class="input__placeholder">Имя и фамилия</span>
+                          </label>
+                          <label class="input input_middle input_group">
+                            <input class="input__body" type="tel">
+                            <span class="input__placeholder">Ваш телефон</span>
+                          </label>
+                          <label class="input input_middle input_group">
+                            <input class="input__body" type="email">
+                            <span class="input__placeholder">Ваш e-mail</span>
+                          </label>
+                          <label class="input input_middle input_group">
+                            <textarea class="input__body contacts-input__textarea c-form__textarea"></textarea>
+                            <span class="input__placeholder">Комментарий</span>
+                          </label>
+                          <label class="checkbox">
+                            <input class="contacts-input__checkbox" type="checkbox" name="agreement" checked="">
+                            <span class="checkbox__box"></span>
+                            <span class="checkbox__text">
+                              Согласен с условиями <span>обработки данных, пользовательского соглашения</span> и <span>оферты</span>
+                            </span>
+                          </label>
+                          <button type="submit" class="c-form__btn btn btn_normal btn_main">ОТПРАВИТЬ</button>
+                        </form>
+                      </div>
+                    </section>
                 </div>
-                  <div class="cart-item">
-                    <figure class="cart-item__media">
-                      <picture>
-                        <source srcset="./img/content/pic/product-2.webp" type="image/webp" />
-                        <img src="./img/content/pic/product-2.png" alt="image" />
-                      </picture>
-                      <button class="cart-item__fav icon-fav" type="button" title="В избранное" data-favourites>
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                    </figure>
-                    <div class="cart-item__content">
-                      <div class="cart-item__article">1235678</div>
-                      <h3 class="cart-item__title"><a href="./product.html">Темпер JoeFrex D58 Galaxy желтый классический</a></h3>
-                      <div class="cart-item__meta">
-                        <div class="cart-item__volume">1000 мл</div>
-                        <div class="cart-item__unit">
-                          <span class="cart-item__unit-price">100 000 ₽</span>
-                          <span class="cart-item__unit-count">/ 1 шт</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="cart-item__quantity">
-                      <div class="quantity quantity_large" data-quantity>
-                        <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
-                          <span class="_seo">Меньше</span>
-                        </button>
-                        <div class="quantity__main">
-                          <input class="quantity__input" type="text" value="1" data-quantity-value data-quantity-min="1" data-quantity-max="9999" />
-                        </div>
-                        <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
-                          <span class="_seo">Больше</span>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="cart-item__price">
-                      <span class="cart-item__main-old">120 000 ₽</span>
-                      <span class="cart-item__main-current">100 000 ₽</span>
-                    </div>
-                    <button class="cart-item__delete icon-trash" type="button" title="Удалить" data-delete>
-                      <span class="_seo">Удалить товар</span>
-                    </button>
+              </section>
+
+              <section class="tabs__pane" id="tab-pickup" hidden>
+                <div class="container">
+                  <div class="contact-cards">
+                    <!-- Для заказов -->
+                      <article class="contact-card">
+                        <span class="contact-card__icon icon-store"></span>
+                        <h3 class="contact-card__title _h3">Для заказов</h3>
+                        <p class="contact-card__time color-label">
+                          Режим работы с 9:00–18:00 (с понедельника по пятницу)
+                        </p>
+                        <p class="contact-card__phone _h2">8 800 4444 8004</p>
+                        <a class="contact-card__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                      </article>
+
+                    <!-- Самовывоз -->
+                      <article class="contact-card">
+                        <span class="contact-card__icon icon-truck"></span>
+                        <h3 class="contact-card__title _h3">Самовывоз</h3>
+                        <p class="contact-card__addr color-label">
+                          630126, г. Новосибирск, ул. Выборная&nbsp;201в
+                        </p>
+                        <p class="contact-card__phone _h2">8 800 4444 8004</p>
+                        <a class="contact-card__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                      </article>
+
+                    <!-- Руководитель -->
+                      <article class="contact-card">
+                        <span class="contact-card__icon icon-briefcase"></span>
+                        <h3 class="contact-card__title _h3">Руководитель подразделения</h3>
+                        <p class="contact-card__phone _h2">8 800 4444 8004</p>
+                        <a class="contact-card__email" href="mailto:zakaz@herbarista.store">zakaz@herbarista.store</a>
+                      </article>
                   </div>
-                  <div class="cart-item">
-                    <figure class="cart-item__media">
-                      <picture>
-                        <source srcset="./img/content/pic/product-2.webp" type="image/webp" />
-                        <img src="./img/content/pic/product-2.png" alt="image" />
-                      </picture>
-                      <button class="cart-item__fav icon-fav" type="button" title="В избранное" data-favourites>
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                    </figure>
-                    <div class="cart-item__content">
-                      <div class="cart-item__article">1235678</div>
-                      <h3 class="cart-item__title"><a href="./product.html">Темпер JoeFrex D58 Galaxy желтый классический</a></h3>
-                      <div class="cart-item__meta">
-                        <div class="cart-item__volume">1000 мл</div>
-                        <div class="cart-item__unit">
-                          <span class="cart-item__unit-price">100 000 ₽</span>
-                          <span class="cart-item__unit-count">/ 1 шт</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="cart-item__quantity">
-                      <p class="cart-item__error">Ой! На сегодня это максимум</p>
-                      <div class="quantity quantity_large quantity_accent" data-quantity>
-                        <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
-                          <span class="_seo">Меньше</span>
-                        </button>
-                        <div class="quantity__main">
-                          <input class="quantity__input" type="text" value="1" data-quantity-value data-quantity-min="1" data-quantity-max="9999" />
-                        </div>
-                        <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
-                          <span class="_seo">Больше</span>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="cart-item__price">
-                      <span class="cart-item__main-current">100 000 ₽</span>
-                    </div>
-                    <button class="cart-item__delete icon-trash" type="button" title="Удалить" data-delete>
-                      <span class="_seo">Удалить товар</span>
-                    </button>
+                  <div class="contact-map contact-map__nov">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2288.301954857435!2d83.05228287691051!3d55.00287184950224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42dfe916fe29447b%3A0x2c81a38bb989c006!2z0YPQuy4g0JLRi9Cx0L7RgNC90LDRjywgMjAx0LIsINCd0L7QstC-0YHQuNCx0LjRgNGB0LosINCd0L7QstC-0YHQuNCx0LjRgNGB0LrQsNGPINC-0LHQuy4sINCg0L7RgdGB0LjRjywgNjMwMTI2!5e0!3m2!1sru!2skz!4v1753137944182!5m2!1sru!2skz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <a href="#" class="contact-map__btn btn btn_normal btn_main">Построить маршрут на карте</a>
                   </div>
-                  <div class="cart-item">
-                    <figure class="cart-item__media">
-                      <picture>
-                        <source srcset="./img/content/pic/product-2.webp" type="image/webp" />
-                        <img src="./img/content/pic/product-2.png" alt="image" />
-                      </picture>
-                      <button class="cart-item__fav icon-fav" type="button" title="В избранное" data-favourites>
-                        <span class="_seo">Добавить в избранное</span>
-                      </button>
-                    </figure>
-                    <div class="cart-item__content">
-                      <div class="cart-item__article">1235678</div>
-                      <h3 class="cart-item__title"><a href="./product.html">Темпер JoeFrex D58 Galaxy желтый классический</a></h3>
-                      <div class="cart-item__meta">
-                        <div class="cart-item__volume">1000 мл</div>
-                        <div class="cart-item__unit">
-                          <span class="cart-item__unit-price">100 000 ₽</span>
-                          <span class="cart-item__unit-count">/ 1 шт</span>
-                        </div>
+                  <div class="requisites">
+                    <div class="requisites__header">
+                      <h2 class="requisites__title">РЕКВИЗИТЫ</h2>
+                      <p class="requisites__owner">ИП КОЛЕСНИКОВ ДМИТРИЙ СЕРГЕЕВИЧ</p>
+                      <div class="requisites__actions">
+                        <a href="#" class="requisites__btn btn btn_normal btn_main">СКАЧАТЬ РЕКВИЗИТЫ PDF</a>
+                        <a href="#" class="requisites__details-link">ПОДРОБНЕЕ</a>
                       </div>
                     </div>
-                    <div class="cart-item__quantity">
-                      <div class="quantity quantity_large" data-quantity>
-                        <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
-                          <span class="_seo">Меньше</span>
-                        </button>
-                        <div class="quantity__main">
-                          <input class="quantity__input" type="text" value="1" data-quantity-value data-quantity-min="1" data-quantity-max="9999" />
-                        </div>
-                        <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
-                          <span class="_seo">Больше</span>
-                        </button>
+                  </div>
+                  <div class="requisites">
+                    <div class="requisites__header">
+                      <h2 class="requisites__title">ПРОИЗВОДИТЕЛЬ</h2>
+                      <p class="requisites__owner">ООО "ДОКТОР ЗЭ И КОМПАНИЯ"</p>
+                      <div class="requisites__actions">
+                        <a href="#" class="requisites__btn btn btn_normal btn_main">СКАЧАТЬ РЕКВИЗИТЫ PDF</a>
+                        <a href="#" class="requisites__details-link">ПОДРОБНЕЕ</a>
                       </div>
                     </div>
-                    <div class="cart-item__price">
-                      <span class="cart-item__main-current">100 000 ₽</span>
+                  </div>
+                  <div class="requisites">
+                    <div class="requisites__header">
+                      <h2 class="requisites__title">РЕКВИЗИТЫ</h2>
+                      <p class="requisites__owner">ИП КОЛЕСНИКОВ ДМИТРИЙ СЕРГЕЕВИЧ</p>
+                      <div class="requisites__actions">
+                        <a href="#" class="requisites__btn btn btn_normal btn_main">СКАЧАТЬ РЕКВИЗИТЫ PDF</a>
+                        <a href="#" class="requisites__details-link">ПОДРОБНЕЕ</a>
+                      </div>
                     </div>
-                    <button class="cart-item__delete icon-trash" type="button" title="Удалить" data-delete>
-                      <span class="_seo">Удалить товар</span>
-                    </button>
+                  </div>
+
+                  <section class="contacts-form">
+                    <div class="contacts-form__left">
+                      <h2 class="contacts-form__title">Найдем решение<br>любого вопроса</h2>
+                      <img src="img/swoosh.svg" alt="" class="contacts-form__swoosh">
+                    </div>
+                    <div class="contacts-form__right">
+                      <form action="#" class="c-form">
+                        <label class="input input_middle input_group">
+                          <input class="input__body" type="text">
+                          <span class="input__placeholder">Имя и фамилия</span>
+                        </label>
+                        <label class="input input_middle input_group">
+                          <input class="input__body" type="tel">
+                          <span class="input__placeholder">Ваш телефон</span>
+                        </label>
+                        <label class="input input_middle input_group">
+                          <input class="input__body" type="email">
+                          <span class="input__placeholder">Ваш e-mail</span>
+                        </label>
+                        <label class="input input_middle input_group">
+                          <textarea class="input__body contacts-input__textarea c-form__textarea"></textarea>
+                          <span class="input__placeholder">Комментарий</span>
+                        </label>
+                        <label class="checkbox">
+                          <input class="contacts-input__checkbox" type="checkbox" name="agreement" checked="">
+                          <span class="checkbox__box"></span>
+                          <span class="checkbox__text">
+                            Согласен с условиями <span>обработки данных, пользовательского соглашения</span> и <span>оферты</span>
+                          </span>
+                        </label>
+                        <button type="submit" class="c-form__btn btn btn_normal btn_main">ОТПРАВИТЬ</button>
+                      </form>
+                    </div>
+                  </section>
+                </div>
+              </section>
+
+              <section class="tabs__pane" id="tab-payment" hidden>
+                <div class="container">
+                  <div class="payment-info">
+                    <p>Для принятия онлайн-платежей мы используем надежный эквайринг от<br>Сбербанка - без комиссии, утечки данных и без сохранения данных вашей <br>карты.</p>
+                  </div>
+                  <div class="payment-methods">
+                    <div class="payment-methods__item">
+                      <span class="payment-methods__icon icon-receipt"></span>
+                      <h3 class="payment-methods__title">БЕЗ КОМИССИИ</h3>
+                      <p>Онлайн-оплата любой картой без комиссии</p>
+                    </div>
+                    <div class="payment-methods__item">
+                      <span class="payment-methods__icon icon-disscount"></span>
+                      <h3 class="payment-methods__title">БЕЗ НАЦЕНКИ</h3>
+                      <p>Оплата по счёту без наценки</p>
+                    </div>
+                    <div class="payment-methods__item">
+                      <span class="payment-methods__icon icon-users"></span>
+                      <h3 class="payment-methods__title">ОПЛАТА НАЛИЧНЫМИ</h3>
+                      <p>Оплата при получении наличными или картой при любой сумме заказа</p>
+                    </div>
+                    <div class="payment-methods__item">
+                      <span class="payment-methods__icon icon-cart"></span>
+                      <h3 class="payment-methods__title">ВОЗВРАТ</h3>
+                      <p>Возврат денежных средств осуществляется менеджером по вашему запросу. Максимальный срок возврата с момента его осуществления менеджером - 3 рабочих дня</p>
+                    </div>
                   </div>
                 </div>
-  
-                <aside class="cart__summary">
-                  <div class="cart-summary">
-                    <h3 class="cart-summary__title">Итог к оплате</h3>
-                    <div class="cart-summary__total">1 000 000 ₽</div>
-  
-                    <div class="cart-summary__divider"></div>
-                    <dl class="cart-summary__list">
-                      <div class="cart-summary__item">
-                        <dt>Ваш заказ</dt>
-                        <dd>5 товаров</dd>
-                      </div>
-                      <div class="cart-summary__item">
-                        <dt>Товары на сумму</dt>
-                        <dd>1 100 000 ₽</dd>
-                      </div>
-                      <div class="cart-summary__item">
-                        <dt>Доставка</dt>
-                        <dd>Бесплатно</dd>
-                      </div>
-                      <div class="cart-summary__item">
-                        <dt>Скидка</dt>
-                        <dd><span class="cart-summary__discount">-100 000 ₽</span></dd>
-                      </div>
-                    </dl>
-                    <div class="cart-summary__divider"></div>
-  
-                    <label class="input input_middle input_group cart-summary__bonus">
-                      <input class="input__body input__body_contour" type="text" placeholder=" " value="123 456"><span class="input__placeholder">Ваш баланс бонусов</span>
-                      <button class="input__action" type="button">Списать</button>
-                    </label>
-  
-                    <label class="input input_middle input_group cart-summary__promo">
-                      <input class="input__body input__body_contour" type="text" placeholder=" "><span class="input__placeholder">Промокод</span>
-                      <button class="input__action" type="button">Применить</button>
-                    </label>
-  
-                    <a class="btn btn_normal btn_main" href="./checkout.html">Перейти к оформлению</a>
-  
-                    <p class="cart-summary__note icon-info">Доставка осуществляется только по Москве и МО</p>
+              </section>
+
+              <section class="tabs__pane" id="tab-marketplace" hidden>
+                <div class="container">
+                  <div class="marketplaces">
+                    <div class="marketplaces__item">
+                      <figure>
+                        <picture><source srcset="./img/content/logo/logo-5.png" type="image/webp"><img class="categories__img" src="./img/content/logo/logo-5.png" alt="Продукты"></picture>
+                      </figure>
+                    </div>
+                    <div class="marketplaces__item">
+                      <figure>
+                        <picture><source srcset="./img/content/logo/logo-4.webp" type="image/webp"><img class="categories__img" src="./img/content/logo/logo-4.webp" alt="Продукты"></picture>
+                      </figure>
+                    </div>
+                   
                   </div>
-                </aside>
-              </div>
+                </div>
+              </section>
             </div>
           </div>
-        </section>
+        </div>
       </main>
+
+
+
 
       <footer class="footer">
         <div class="container">
@@ -965,7 +1068,7 @@
             <div class="subscribe__main">
               <form class="subscribe__form" action="#">
                 <label class="input input_middle">
-                  <input class="input__body input__body_contour" type="email" placeholder=" " required>
+                  <input class="input__body" type="email" placeholder=" " required>
                   <span class="input__placeholder">Ваш email</span>
                 </label>
                 <button class="subscribe__btn btn btn_normal btn_secondary" type="submit">Подписаться</button>
@@ -1098,4 +1201,5 @@
       </footer>
     </div>
   </body>
-</html>
+</html> 
+
