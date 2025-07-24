@@ -13,6 +13,7 @@
 @import "module/assortment.scss";
 @import "module/search.scss";
 @import "module/user-bar.scss";
+@import "module/contacts/contacts.scss";
 
 @import "module/footer.scss";
 @import "module/social.scss";
@@ -46,6 +47,8 @@
 
 @import "module/favorites/favorites.scss";
 @import "module/cart/cart.scss";
+@import "module/checkout/checkout.scss";
+@import "module/order/order.scss";
 
 @import "module/catalog/category.scss";
 @import "module/catalog/catalog.scss";
@@ -74,3 +77,64 @@
 @import "module/lc/cabinet-extra.scss";
 @import "module/lc/user-badge.scss";
 @import "module/lc/cabinet-nav.scss";
+
+.breadcrumbs {
+  padding-bottom: 24px;
+}
+
+@media (max-width: 1279.98px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .page-head__body {
+    padding-bottom: 32px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  ._h1,
+  h1 {
+    font-size: 32px;
+  }
+
+  ._h2,
+  h2 {
+    font-size: 28px;
+  }
+
+  .page-head__body {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .page-head__title {
+    font-size: 24px;
+  }
+
+  .breadcrumbs {
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  ._h1,
+  h1 {
+    font-size: 28px;
+  }
+
+  ._h2,
+  h2 {
+    font-size: 24px;
+  }
+
+  .page-head__title {
+    font-size: 20px;
+  }
+}
