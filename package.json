@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nouislider": "^15.8.1",
+    "swiper": "^11.2.10"
+  }
+}

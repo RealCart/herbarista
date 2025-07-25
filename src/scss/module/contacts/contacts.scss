@@ -221,9 +221,17 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 64px;
+  padding: 80px 130px;
   align-items: start;
+  background-color: #F5F5F5;
+  position: relative;
+
+  &__pic {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1.2fr;
@@ -296,4 +304,10 @@
       width: auto;
     }
   }
+} 
+
+@media (max-width: 1023.98px) {
+    .contacts-form__body {
+        grid-template-columns: 1fr;
+    }
 } 

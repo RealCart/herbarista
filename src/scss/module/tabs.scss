@@ -19,7 +19,7 @@
     flex-shrink: 0; // keep items from shrinking when scrolling
   }
 
-  &__btn {
+  &__trigger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -40,12 +40,12 @@
     }
 
     @media (any-hover: hover) {
-      &:not(._active):not(:active):hover {
+      &:not(.is-active):not(:active):hover {
         background-color: var(--color-shadow);
       }
     }
 
-    &._active {
+    &.is-active {
       color: var(--color-neutral);
       background-color: var(--color-main);
       pointer-events: none;

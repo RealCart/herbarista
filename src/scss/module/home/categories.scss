@@ -38,12 +38,22 @@
   &__item {
     position: relative;
     flex-shrink: 0;
-    width: 100%;
+    width: calc(100% / 2 - var(--gap-small) / 2);
     margin-right: var(--gap-small);
+
+    @media (min-width: ($md4+px)) {
+      // от 576px
+      width: calc(100% / 3 - var(--gap-small) * 2 / 3);
+    }
+
+    @media (min-width: ($md3+px)) {
+      // от 768px
+      width: calc(100% / 4 - var(--gap-small) * 3 / 4);
+    }
 
     @media (min-width: ($md2+px)) {
       // от 1024px
-      width: 100%;
+      width: calc(100% / 5 - var(--gap-small) * 4 / 5);
     }
 
     ._is-init & {

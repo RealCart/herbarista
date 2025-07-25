@@ -456,7 +456,7 @@ window.addEventListener("load", function () {
 
     new Swiper(".categories__slider", {
       modules: [Navigation, Pagination],
-      slidesPerView: 5,
+      slidesPerView: "auto",
       spaceBetween: 6,
       wrapperClass: "categories__items",
       slideClass: "categories__item",
@@ -476,6 +476,20 @@ window.addEventListener("load", function () {
         nextEl: ".categories__btn_next",
         disabledClass: "_is-disabled",
         lockClass: "_is-lock",
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 5,
+        },
+        768: {
+          slidesPerView: 4,
+        },
+        576: {
+          slidesPerView: 3,
+        },
+        0: {
+          slidesPerView: 2,
+        },
       },
       on: {
         init: (swiper) => {
