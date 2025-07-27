@@ -18,6 +18,7 @@ import {
 import "./module/dynamic_adapt.js";
 import "./module/popup.js";
 import "./module/select.js";
+import "./module/checkout.js";
 import Swiper from "swiper";
 import {
   Autoplay,

@@ -29,6 +29,9 @@
   background-color: var(--color-shadow-lightest);
   border-radius: var(--radius-small);
   @extend %transition;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   // optional hover effect
   @media (any-hover: hover) {
@@ -41,9 +44,10 @@
     margin-bottom: 20px;
   }
 
-  &__desc p {
-    margin-top: 20px;
+  &___info p a{
+    color: var(--color-main);
   }
+
 
   &__list,
   &__sublist {
@@ -162,6 +166,13 @@
   @media (min-width: 768px) {
     grid-template-columns: 1fr 2fr;
   }
+
+  iframe {
+    width: 100%;
+    height: 285px;
+    border: 0;
+    border-radius: var(--radius-small);
+  }
 }
 .map-placeholder {
   background-color: #f0f0f0;
@@ -248,15 +259,41 @@ $break-sm:      479px;    // ≤    479 — телефон
   padding: 96px 15px;
   text-align: center;
 
+  @include respond($break-md) {
+    padding: 60px 15px;
+  }
+  @include respond($break-sm) {
+    padding: 40px 15px;
+  }
+
   // заголовок и описание
   &__title {
     font: 900 64px/1 $font-main;
     text-transform: uppercase;
+
+    @include respond($break-lg) {
+      font-size: 48px;
+    }
+    @include respond($break-md) {
+      font-size: 32px;
+    }
+    @include respond($break-sm) {
+      font-size: 24px;
+    }
   }
   &__text  {
     max-width: 520px;
     margin: 32px auto 64px;
     font: 400 18px/1.6 $font-main;
+
+    @include respond($break-md) {
+      margin-bottom: 40px;
+    }
+    @include respond($break-sm) {
+      margin-top: 24px;
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
   }
 
   //‑‑‑ слайдер ‑‑‑//
@@ -273,11 +310,13 @@ $break-sm:      479px;    // ≤    479 — телефон
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 15px;
-      border: 1px solid $border;
-      background: #fff;
-      font: 700 36px/1 $font-main;
-      text-transform: uppercase;
+      padding: 0px 2px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
 
       @include respond($break-lg) { flex: 0 0 33.333%; }
       @include respond($break-md) { flex: 0 0 50%; }
@@ -327,5 +366,17 @@ $break-sm:      479px;    // ≤    479 — телефон
         &-active { background: $black; }   // залитый ромб
       }
     }
+  }
+}
+
+.delivery-card__info p {
+  color: #828282;
+  font-size: 13px;
+  font-weight: normal;
+
+ 
+  a {
+    color: var(--color-main);
+    font-weight: 500;
   }
 }

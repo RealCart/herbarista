@@ -1,7 +1,6 @@
 .checkout-body {
   display: flex;
   flex-direction: row;
-  gap: 24px;
   justify-content: space-between;
 }
 
@@ -106,6 +105,16 @@
 
 .payment-options {
   display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* enable wrapping so items flow onto new lines on narrower screens */
+
+  &_legal {
+    /* Располагаем способы оплаты для юр. лиц так же в виде карточек, а не на всю ширину */
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: auto;
+  }
 }
 
 .radio_delivery,
@@ -122,40 +131,44 @@
 
   .radio__element {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 24px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
   }
 
   .radio__decor {
     flex-shrink: 0;
-    width: 18px;
-    height: 18px;
+    width: 40px;             /* внешний диаметр */
+    height: 40px;
     border-radius: 50%;
-    border: 1px solid #dee2e6;
+    /* нейтральная рамка до выбора */
+    border: 3px solid #C8C8C8;
+    background-color: #fff;
     display: grid;
     place-items: center;
-    margin-top: 5px;
+    position: absolute;
+    top: 32px;               /* позиционирование в карточке */
+    left: 32px;
   }
 
   .radio__decor::before {
     content: "";
-    width: 10px;
-    height: 10px;
-    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
-    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    background-color: white;
+    width: 22px;             /* внутренний кружок */
+    height: 22px;
+    background-color: #007bff;
+    border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
   }
 
+  .radio__input:checked + .radio__element {
+     border-color: var(--primary);
+  }
+
   .radio__input:checked + .radio__element .radio__decor {
-    border-color: #212121;
-    background-color: #212121;
+    border-color: #007bff;
   }
 
   .radio__input:checked + .radio__element .radio__decor::before {
@@ -166,6 +179,7 @@
 .radio_delivery {
   width: 100%;
   padding: 0;
+  background: transparent;
   
   .radio__element {
     flex-direction: row;
@@ -197,19 +211,45 @@
   }
 }
 
-.radio__element {
-  display: flex;
-  flex-direction: column;
-}
-
-.icon-card {
-  margin-left: auto;
-}
 
 .radio_payment {
   display: flex;
+  flex: 1 1 calc(50% - 6px);
   flex-direction: column;
   gap: 16px;
+  min-height: 130px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__logos {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+
+    img {
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  &_legal {
+    /* Карточка оплаты юр. лиц – фиксируем ширину, чтобы она не растягивалась на всю строку */
+    min-height: auto;
+    flex: 0 1 204px; /* можно корректировать при необходимости */
+    max-width: 100%;
+  }
 
   &__top_radio {
     display: flex;
@@ -254,6 +294,31 @@
     .icon-card {
       display: none;
     }
+  }
+}
+
+/* Responsive column counts for payment option cards */
+@media (min-width: 1280px) {
+  /* 4 columns on large screens for standard payment cards */
+  .radio_payment {
+    flex: 1 1 calc(25% - 9px);
+  }
+
+  /* keep legal-entity card compact */
+  .radio_payment_legal {
+    flex: 0 1 204px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  /* 3 columns on tablet screens for standard payment cards */
+  .radio_payment {
+    flex: 1 1 calc(33.333% - 8px);
+  }
+
+  /* keep legal-entity card compact */
+  .radio_payment_legal {
+    flex: 0 1 204px;
   }
 }
 
@@ -309,8 +374,8 @@
 } 
 
 .icon-card img{
-  width: 37px;
-  height: 40px;
+  width: 84px;
+  height: 44px;
 }
 
 @media (max-width: 1279.98px) {
@@ -359,9 +424,11 @@
     margin-left: 42px;
   }
 
-  .radio_payment {
+  .radio_payment,
+  .radio_payment_legal {
     justify-content: center;
     text-align: center;
+    flex-basis: 100%;
   }
 
   .checkout-section .tabs .tabs__nav {
@@ -385,4 +452,24 @@
   .delivery-option {
     padding: 16px;
   }
+}
+
+.checkout-radio__input {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #E8E8E8;
+}
+
+.radio_delivery {
+  width: 100%;
+  padding: 0;
+  gap: 28px;
+  display: flex;
+  background: rgba(0, 0, 0, 0);
+  align-items: center;
+}
+
+.input__body_black:focus-visible {
+  border-color: #393939;
+  border-width: 2px;
 }

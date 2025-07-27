@@ -124,7 +124,8 @@
     }
 
     &__owner {
-      font-size: 16px;
+      font-size: 18px;
+      font-weight: bold;
     }
 
     &__actions {
@@ -227,6 +228,13 @@
   background-color: #F5F5F5;
   position: relative;
 
+  @media (max-width: 1199.98px) {
+    padding: 60px 80px;
+  }
+  @media (max-width: 767.98px) {
+    padding: 40px 15px;
+  }
+
   &__pic {
     position: absolute;
     bottom: 0;
@@ -242,10 +250,20 @@
   }
 
   &__title {
-    font-size: 3.125rem;
+    font-size: 2.125rem;
     font-weight: 700;
     text-transform: uppercase;
-    line-height: 1.2;
+    line-height: 1.0;
+
+    @media (max-width: 1199.98px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 1023.98px) {
+      text-align: center;
+    }
+    @media (max-width: 767.98px) {
+      font-size: 1.8rem;
+    }
   }
 
   &__swoosh {
@@ -263,6 +281,10 @@
 
   &__right {
     padding-top: 1rem;
+
+    @media (max-width: 1023.98px) {
+      padding-top: 0;
+    }
   }
 }
 
@@ -304,10 +326,4 @@
       width: auto;
     }
   }
-} 
-
-@media (max-width: 1023.98px) {
-    .contacts-form__body {
-        grid-template-columns: 1fr;
-    }
-} 
+}
