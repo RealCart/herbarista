@@ -39,16 +39,19 @@
   gap: 16px;
 
   &_two {
-    grid-template-columns: repeat(2, 1fr);
+    /* Ensure grid items can shrink below their content size to prevent overflow on very wide screens */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   &_three {
-    grid-template-columns: repeat(3, 1fr);
+    /* Same shrink-to-fit fix for 3-column layout */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin: 18px 0px;
   }
 
   &_four {
-    grid-template-columns: repeat(4, 1fr);
+    /* Same shrink-to-fit fix for 4-column layout */
+    grid-template-columns: repeat(4, 178px);
   }
 }
 

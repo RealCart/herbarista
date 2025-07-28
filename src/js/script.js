@@ -960,7 +960,7 @@ window.addEventListener("load", function () {
 // Autosize textarea
 const textareas = document.querySelectorAll('textarea.c-form__textarea');
 textareas.forEach(textarea => {
-  textarea.setAttribute('style', 'height:' + (textarea.scrollHeight) + 'px;overflow-y:hidden;');
+  textarea.setAttribute('style', 'height:52px;overflow-y:hidden;background-color:#fff;');
   textarea.addEventListener("input", OnInput, false);
 });
 
@@ -1002,6 +1002,49 @@ function OnInput() {
   this.style.height = 'auto';
   this.style.height = (this.scrollHeight) + 'px';
 }
+
+// Validation for contact forms
+// Highlight empty required fields with a red border when the user tries to submit the form
+(function () {
+  const errorClass = '_is-error';
+
+  // Helper to toggle error class based on value
+  const toggleError = (input) => {
+    if (input.value.trim() === '') {
+      input.classList.add(errorClass);
+      return false;
+    } else {
+      input.classList.remove(errorClass);
+      return true;
+    }
+  };
+
+  // Handle form submission
+  document.addEventListener('submit', (e) => {
+    const form = e.target.closest('.c-form');
+    if (!form) return;
+
+    const inputs = form.querySelectorAll('.input__body');
+    let allValid = true;
+    inputs.forEach((input) => {
+      const isValid = toggleError(input);
+      if (!isValid) {
+        allValid = false;
+      }
+    });
+
+    if (!allValid) {
+      e.preventDefault();
+    }
+  });
+
+  // Remove error styling on user input
+  document.addEventListener('input', (e) => {
+    if (e.target.classList && e.target.classList.contains('input__body')) {
+      toggleError(e.target);
+    }
+  });
+})();
 
 window["FLS"] = true;
 isWebp();

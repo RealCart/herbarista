@@ -142,3 +142,8 @@
     }
   }
 }
+
+// Error state for form inputs
+.input__body._is-error {
+  border-color: #ff0000 !important;
+}
