@@ -450,7 +450,10 @@ $break-xs: 575px;  // ≤ 575    – мобиль
 }
 
 .cart__summary{
-  position:sticky;top:24px; // остаётся на глазах при скролле
+  position:-webkit-sticky; // Safari prefix for better support
+  position:sticky;
+  top:60px; // остаётся на глазах при скролле
+  align-self:flex-start; // ensure proper sticky behaviour inside CSS Grid & Flexbox in Safari
   @include respond($break-md){position:static;}
   max-width:100%;
   // доп. паддинги на мобиль
